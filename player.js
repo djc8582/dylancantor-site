@@ -266,3 +266,41 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mount);
   else mount();
 })();
+
+/* Nav: highlight the section you are actually looking at.
+   On project pages there are no in-page targets, so the markup's own
+   aria-current is left alone. */
+(function () {
+  function start() {
+    var links = Array.prototype.slice.call(document.querySelectorAll("nav a[href*='#']"));
+    if (!links.length) return;
+    var map = [];
+    links.forEach(function (a) {
+      var id = (a.getAttribute("href") || "").split("#")[1];
+      var el = id && document.getElementById(id);
+      if (el) map.push({ a: a, el: el });
+    });
+    if (!map.length) return;
+
+    var ticking = false;
+    function sync() {
+      ticking = false;
+      var y = window.pageYOffset + 120;
+      var best = map[0];
+      map.forEach(function (m) { if (m.el.offsetTop <= y) best = m; });
+      if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 80) {
+        best = map[map.length - 1];
+      }
+      links.forEach(function (a) { a.removeAttribute("aria-current"); });
+      best.a.setAttribute("aria-current", "true");
+    }
+    function onScroll() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(sync); }
+    }
+    sync();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();
