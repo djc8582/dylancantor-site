@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clubs &mdash; Dylan Cantor</title>
+<meta name="description" content="A creative collaboration platform. Founder and sole engineer. 1,908 users, live on the iOS App Store.">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css">
+</head><body>
+<nav><div class="wrap">
+  <a class="name" href="/">Dylan Cantor</a>
+  <ul><li><a href="/#work" aria-current="page">Work</a></li><li><a href="/#music">Music</a></li><li><a href="/#about">About</a></li><li><a href="/Cantor_Dylan_CV.pdf">CV</a></li></ul>
+</div></nav>
+<header class="proj-head"><div class="wrap">
+  <a class="backlink" href="/#work">&larr; Work</a>
+  <h1>Clubs</h1>
+  <p class="lead">A platform for finding people to make things with.</p>
+  <div class="meta">
+    <span><b>Role</b> &nbsp;Founder, sole engineer</span>
+    <span><b>Date</b> &nbsp;February 2026 &ndash; present</span>
+    <span><b>Platform</b> &nbsp;iOS, live on the App Store</span>
+    <span><b>Stack</b> &nbsp;React Native, Expo, TypeScript, Supabase</span>
+    <span><b>Press</b> &nbsp;<a href="https://nyunews.com/culture/2026/11/05/clubs-app-student-founders/">Washington Square News</a></span>
+  </div>
+</div></header>
+
+<div class="body-copy"><div class="wrap">
+  <p>Projects are posted as cards, discovered by swiping, and applied to. Once you are accepted, you collaborate in real-time channels. I am the only engineer across a multi-package monorepo, 2,300+ commits since February. Co-founded with Nick Benak, who leads design and marketing.</p>
+
+  <div class="stats">
+    <div class="stat"><b>1,908</b><span>people</span></div>
+    <div class="stat"><b>968</b><span>joined in 30 days</span></div>
+    <div class="stat"><b>304</b><span>live projects</span></div>
+    <div class="stat"><b>206</b><span>creators &middot; 48 schools</span></div>
+  </div>
+  <p>In the last thirty days the app handled <strong>24,172 swipes, 3,530 applications and 2,133 messages</strong>. Signups went from 71 in April to 674 in October.</p>
+
+  <h2>Matching people without a form</h2>
+  <p>Onboarding asks you to describe yourself in your own words, in free text, and a pipeline turns that into structured interests, skills and goals &mdash; with moderation in the same pass. Project creation generates tags the same way. Search is semantic rather than keyword. There is also an email path: forward a message describing a project and it comes out the other side as a published card.</p>
+  <p>The discovery feed runs on a sawtooth-staircase ranking algorithm, batched and preloaded in the background so the first card paints instantly rather than after a spinner.</p>
+
+  <h2>The toll-fraud attack</h2>
+  <div class="callout"><p>Someone discovered the SMS verification endpoint and began driving traffic through it to premium-rate numbers. Every fraudulent request cost real money.</p></div>
+  <p>I hardened the one-time-passcode flow against abuse &mdash; rate limiting, the obvious geographic and numbering-plan checks, and a set of heuristics on request shape. It is the kind of problem you do not design for in advance and then have to fix at speed, in production, while real users are signing up.</p>
+
+  <h2>Press</h2>
+  <p><a href="https://nyunews.com/culture/2026/11/05/clubs-app-student-founders/">&ldquo;NYU student-founders talk app-based solution to creative collaboration&rdquo;</a> &mdash; <em>Washington Square News</em>, 5 November 2026.</p>
+
+  <p><a href="https://apps.apple.com/app/clubs-start-creating/id6761756814">App Store</a> &middot; <a href="https://clubsapp.org">clubsapp.org</a></p>
+</div></div>
+
+<footer><div class="wrap"><div class="row">
+  <span><a href="/#work">&larr; All work</a></span>
+  <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
+</div></div></footer>
+</body></html>
