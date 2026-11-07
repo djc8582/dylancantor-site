@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>I Feel Like &mdash; Dylan Cantor</title>
-<meta name="description" content="A second-order ambisonic production made at IRCAM, Paris.">
+<meta name="description" content="An ambisonic production made at IRCAM, Paris, decoded for a 3D speaker layout and for headphones.">
 <link rel="icon" href="data:,"><link rel="stylesheet" href="style.css">
 </head><body>
 <nav><div class="wrap">
@@ -15,31 +15,39 @@
   <div class="meta">
     <span><b>Where</b> &nbsp;IRCAM, Paris &mdash; NYU&rsquo;s program, one day a week</span>
     <span><b>Date</b> &nbsp;Spring 2026</span>
-    <span><b>Format</b> &nbsp;Second-order ambisonics &rarr; binaural</span>
+    <span><b>Format</b> &nbsp;Ambisonic &rarr; Studio D dome, binaural, stereo</span>
     <span><b>Length</b> &nbsp;4:13</span>
+    <span><b>Write-up</b> &nbsp;<a href="/Cantor_I-Feel-Like_IRCAM.pdf">Project paper (PDF)</a></span>
   </div>
 </div></header>
 
 <div class="body-copy"><div class="wrap">
-  <p>Roughly twenty sources, each encoded individually into a second-order ambisonic field with its own room encoding and directivity shaping. Reverberation runs inside the ambisonic domain rather than on a stereo bus. The same scene then decodes two ways: to a loudspeaker array, and binaurally to headphones.</p>
+  <p>Every source in the piece is encoded individually into an ambisonic field and positioned by azimuth and elevation rather than panned left to right. The same ambisonic master is then decoded three ways: to the 3D speaker layout in IRCAM&rsquo;s Studio D, binaurally to headphones, and down to stereo. Production in Ableton, spatialization in Reaper with the IEM Plug-in Suite &mdash; StereoEncoder for encoding, AllRADecoder for each output format.</p>
 
-  <p>All source material was recorded for the piece &mdash; field recordings on omnidirectional capsules, instruments from the Baschet brothers' <em>Structures Sonores</em> sound sculptures, and tetrahedral-microphone material converted A-format to B-format before encoding.</p>
+  <p>All source material was recorded for the piece: percussion and resonant metal and glass captured at the <strong>Ateliers Baschet</strong> on omnidirectional capsules, so the resonant tail of the Cristal Baschet and the behaviour of the room came with it, plus field recordings from the Bois de Vincennes that run raw underneath the whole track and also feed two granular layers.</p>
+
+  <div class="callout">
+    <p>The spatial motion is structural, not decorative. The granular layers do not pan, they orbit. They swell into the break because the argument has gone somewhere the beat cannot follow; the glitch layer takes the field at the end because the narrator has accepted what he is.</p>
+  </div>
 
   <figure>
     <img src="img/ifeellike-spectrogram.png" alt="Spectrogram of I Feel Like">
     <figcaption>Full-length spectrogram, logarithmic frequency scale.</figcaption>
   </figure>
 
-  <p class="caption"><strong>Headphones recommended.</strong></p>
-  <table class="audio">
-    <tr><th>Rendering</th><th>Audio</th></tr>
-    <tr><td class="label">Ambisonic decode</td>
-        <td><audio controls preload="none" src="audio/ifeellike-binaural.mp3">Your browser does not support the audio element.</audio></td></tr>
-  </table>
+  <p class="cue">
+    <button type="button" class="playcue" onclick="window.dcPlayer&amp;&amp;window.dcPlayer.play('I Feel Like')">
+      <span class="playcue-ico" aria-hidden="true">&#9654;</span> Play the binaural mix
+    </button>
+    <span class="cue-note">Headphones recommended &mdash; it plays in the bar at the bottom and keeps going as you move around the site.</span>
+  </p>
 
-  <p class="links">Reaper &middot; IEM Plug-in Suite &middot; Sennheiser AMBEO</p>
+  <p>The full account of the piece &mdash; the sources, the spatial design section by section, and what the ambisonic workflow changed about how I compose &mdash; is in the <a href="/Cantor_I-Feel-Like_IRCAM.pdf">project paper</a>.</p>
+
+  <p class="links">Reaper &middot; Ableton Live &middot; IEM Plug-in Suite &middot; Zoom H6 omni pair</p>
 </div></div>
 <footer><div class="wrap"><div class="row">
   <span><a href="/#work">&larr; All work</a></span>
   <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
-</div></div></footer></body></html>
+</div></div></footer><script src="player.js" defer></script>
+</body></html>
