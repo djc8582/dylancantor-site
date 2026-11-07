@@ -60,11 +60,11 @@ em{font-style:italic}
   margin:0 0 28px}
 
 /* ---------- hero ---------- */
-header.hero{padding-block:70px 62px;border-bottom:1px solid var(--rule)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:52px;align-items:end}
-.hero-text p{font-size:16.5px;max-width:56ch}
-figure.portrait{margin:0}
-figure.portrait img{display:block;width:100%;height:auto;border-radius:2px;
+header.hero{padding-block:52px 60px;border-bottom:1px solid var(--rule)}
+.hero-text p{font-size:16.5px;max-width:62ch}
+figure.portrait{margin:0 0 34px}
+figure.portrait img{display:block;width:auto;max-width:100%;
+  max-height:min(52vh,470px);height:auto;border-radius:2px;
   filter:grayscale(1) contrast(1.05)}
 
 /* ---------- press card ---------- */
@@ -297,7 +297,7 @@ body.has-player{padding-bottom:64px}
 
 /* ---------- responsive ---------- */
 @media (max-width:860px){
-  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:32px}
+  figure.portrait img{max-height:min(44vh,400px)}
 }
 @media (max-width:720px){
   .wrap{padding-inline:20px}
@@ -305,9 +305,9 @@ body.has-player{padding-bottom:64px}
   section{padding-block:44px}
   header.hero{padding-block:46px 40px}
   .eyebrow{margin-bottom:20px}
-  .hero-grid{grid-template-columns:1fr;gap:26px;align-items:start}
   .hero-text p{max-width:none}
-  figure.portrait{max-width:none}
+  figure.portrait{margin-bottom:26px}
+  figure.portrait img{width:100%;max-height:none}
   .lead{max-width:none}
 
   ol.index a{grid-template-columns:46px minmax(0,1fr);gap:16px;padding:17px 8px;margin-inline:-8px}
