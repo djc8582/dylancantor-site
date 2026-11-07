@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HearMe &mdash; Dylan Cantor</title>
-<meta name="description" content="An iOS app that builds a full arrangement out of what a musician actually played. Georgia Tech Center for Music Technology.">
+<meta name="description" content="An iOS app that builds an arrangement from what a musician actually played. Georgia Tech Center for Music Technology.">
 <link rel="icon" href="data:,"><link rel="stylesheet" href="style.css">
 </head><body>
 <nav><div class="wrap">
@@ -14,16 +14,19 @@
   <p class="lead">Most generative music tools start from a prompt. This one starts from a performance.</p>
   <div class="meta">
     <span><b>Role</b> &nbsp;Sole engineer, iOS client</span>
-    <span><b>Lab</b> &nbsp;Georgia Tech Center for Music Technology</span>
-    <span><b>Advisor</b> &nbsp;Prof. Gil Weinberg</span>
-    <span><b>Date</b> &nbsp;May 2026 &ndash; present</span>
-    <span><b>Stack</b> &nbsp;React Native, Expo, react-native-audio-api, Skia</span>
+    <span><b>Lab</b> &nbsp;Georgia Tech Center for Music Technology, Prof. Gil Weinberg</span>
+    <span><b>Date</b> &nbsp;2026 &ndash; present</span>
   </div>
 </div></header>
 
 <div class="body-copy"><div class="wrap">
-  <p>You record something, play it on the keyboard, or write words. HearMe returns a full arrangement built around what you gave it &mdash; separable stems, chords, and lyrics aligned in time, with a play-along mode so you can perform against your own song. It is shipped and on the App Store.</p>
-  <p>I am the sole engineer on the mobile client, 200+ commits and counting. I joined for a 150-hour summer term and have stayed on the team since, meeting weekly with the group and separately with Prof. Weinberg.</p>
+  <p>Record something, play it on the keyboard, or write lyrics, and HearMe returns a full arrangement built around it &mdash; separable stems, chords, and lyrics aligned in time, with a play-along mode. Shipped on the App Store.</p>
+
+  <ul class="points">
+    <li>Web-Audio-style playback engine in React Native with <strong>sample-accurate scheduling</strong> for the piano and drum interfaces, plus offline MIDI rendering of results.</li>
+    <li>Full input path &mdash; recording, upload, keyboard capture, lyric entry &mdash; into the generation service, with a background watcher that survives app suspension.</li>
+    <li>Result view: one transport across stems, chords, lyrics and play-along, with per-project version history.</li>
+  </ul>
 
   <div class="shots">
     <img src="img/hearme-02-start-with-anything.jpg" alt="HearMe input options">
@@ -32,19 +35,9 @@
     <img src="img/hearme-07-play-along.jpg" alt="Play-along mode">
   </div>
 
-  <h2>Making a phone behave like an instrument</h2>
-  <p>The piano and drum interfaces run on a Web-Audio-style engine I built in React Native with <strong>sample-accurate scheduling</strong>. Touch-to-sound has to be tight enough that the keyboard reads as an instrument and not a remote control, which rules out scheduling notes off JavaScript timers. Generated results render offline through the same MIDI path, so what you hear back is produced by the engine you played into.</p>
-
-  <h2>The pipeline around a slow model</h2>
-  <p>Generation takes minutes and happens on a server, which shapes everything on the client. The full input path &mdash; recording, upload, keyboard capture, lyric entry, selection windows &mdash; feeds the service, and a background watcher survives app suspension so the song finishing does not depend on the app staying open. You get a notification instead.</p>
-  <p>The result view puts a single transport across stems, chords, time-aligned lyrics and play-along, with version history per project, so a song is a thing you revise rather than a thing you re-roll.</p>
-
-  <h2>What I took from it</h2>
-  <p>The model lives on a Georgia Tech server, so from the client it is effectively a black box. A lot of the work became designing honestly around what it returns. That experience is most of why I now want to work on the parts of audio you can measure and control &mdash; signal processing and real-time systems &mdash; rather than on generation.</p>
+  <p class="links">React Native &middot; Expo &middot; react-native-audio-api &middot; Skia &middot; Appwrite</p>
 </div></div>
-
 <footer><div class="wrap"><div class="row">
   <span><a href="/#work">&larr; All work</a></span>
   <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
-</div></div></footer>
-</body></html>
+</div></div></footer></body></html>

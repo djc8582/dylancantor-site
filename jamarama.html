@@ -1,52 +1,37 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jamarama &mdash; Dylan Cantor</title>
-<meta name="description" content="A real-time multiplayer jam system. Winner, Audiotool Challenge at the Google DeepMind Magenta Hackathon.">
+<meta name="description" content="A real-time multiplayer jam system. Winner, Audiotool Challenge, Google DeepMind Magenta Hackathon.">
 <link rel="icon" href="data:,"><link rel="stylesheet" href="style.css">
 </head><body>
-
 <nav><div class="wrap">
   <a class="name" href="/">Dylan Cantor</a>
   <ul><li><a href="/#work" aria-current="page">Work</a></li><li><a href="/#music">Music</a></li><li><a href="/#about">About</a></li><li><a href="/Cantor_Dylan_CV.pdf">CV</a></li></ul>
 </div></nav>
-
 <header class="proj-head"><div class="wrap">
   <a class="backlink" href="/#work">&larr; Work</a>
   <h1>Jamarama</h1>
   <p class="lead">Four phones, one shared clock, one fused track.</p>
   <div class="meta">
-    <span><b>Role</b> &nbsp;Audio architecture, jam system</span>
-    <span><b>Award</b> &nbsp;Winner, Audiotool Challenge</span>
-    <span><b>Venue</b> &nbsp;Google DeepMind Magenta Hackathon</span>
+    <span><b>Role</b> &nbsp;Audio architecture</span>
+    <span><b>Award</b> &nbsp;Winner, Audiotool Challenge &mdash; Google DeepMind Magenta Hackathon</span>
     <span><b>Date</b> &nbsp;June 2026</span>
-    <span><b>Stack</b> &nbsp;Tone.js, WebSocket, Node, Python, MLX</span>
   </div>
 </div></header>
 
 <div class="body-copy"><div class="wrap">
-  <p>Two to four people scan a QR code and each take one dimension of a single piece of music &mdash; drums, harmony, lead, or crowd energy. Nobody plays their own track. They play one track together. The signature moment is that one player moves to a new chord and <strong>the whole band re-roots around their choice on the next downbeat</strong>.</p>
+  <p>Two to four players each control one dimension of a single track from their phones &mdash; drums, harmony, lead, or crowd energy. When one player changes the chord, the whole band re-roots on the next downbeat.</p>
 
-  <p>A non-musician can contribute meaningfully in about ten seconds, which was the point. The pitch was the aux war, solved: instead of fighting over the music, everybody plays at once and your taste is your instrument.</p>
+  <ul class="points">
+    <li>Master clock lives in the host browser and fans beats to phones over WebSocket; phones are thin controllers.</li>
+    <li>The lead keyboard fires a local tone in <strong>under 20&nbsp;ms</strong>, so playing never waits on a network round trip.</li>
+    <li>I measured the generative model for tempo stability first. It <strong>drifts within ~30 seconds</strong> &mdash; there is no tempo input &mdash; so I took it off the clock entirely: a deterministic clock-locked band wrapped in an arhythmic texture layer that floats off the grid, where drift is inaudible.</li>
+    <li>That layer runs <strong>Magenta RealTime 2 on-device via MLX at ~2.37&times; real-time</strong>, conditioned on blended player taste, live chord, and crowd energy.</li>
+  </ul>
 
-  <h2>The clock is the whole problem</h2>
-  <p>The hard part of a shared instrument is not the sound. It is agreeing on <em>when</em>. I put the master clock in the host browser and made everything else follow it, fanning beats out over WebSocket to phones acting as thin controllers.</p>
-  <p>That still leaves the player holding a phone that has to feel like an instrument. So the lead keyboard fires its own tone <strong>locally, in under 20 milliseconds</strong> &mdash; the note sounds immediately, and the network catches up afterwards to tell everyone else about it. You never wait on a round trip to hear yourself.</p>
-
-  <h2>Measuring the model instead of trusting it</h2>
-  <p>We wanted a generative model in the mix. Before building anything around it, I tested whether it could hold tempo.</p>
-  <div class="callout"><p>It cannot. There is no tempo input to the model at all, and a primed on-grid loop <strong>drifts audibly within about thirty seconds</strong>.</p></div>
-  <p>So the model came off the clock entirely. What shipped is a deterministic, clock-locked band &mdash; drums, chords, lead, all ours, all on one clock &mdash; wrapped in an <strong>arhythmic generative texture layer that floats free of the grid</strong>. Drift in an atmospheric wash has no downbeat to be late against, so it stops being an error and starts reading as room sound.</p>
-  <p>Every voice splits into a brain and a voice: the note-choosing logic is always deterministic and ours, and the generative model only ever paints atmosphere or renders notes we already chose. It never picks a note and nothing rhythmic is slaved to it.</p>
-
-  <h2>Running the model on the machine</h2>
-  <p>The texture layer runs <strong>Magenta RealTime&nbsp;2 locally on Apple Silicon through MLX at roughly 2.37&times; real-time</strong>, conditioned on blended player taste, the live chord, and crowd energy, streaming through a queue-fed output that the OS mixes with the browser band. Players describe what they are into when they join; those descriptions are fused into the style conditioning, so the texture is literally made of everyone's taste at once.</p>
-
-  <h2>Credits</h2>
-  <p>Built over a weekend with one collaborator, who handled the lobby and onboarding. I led the audio architecture and the jam system. Won the Audiotool Challenge.</p>
+  <p class="links">Tone.js &middot; WebSocket &middot; Node &middot; Python &middot; MLX &mdash; two-person team</p>
 </div></div>
-
 <footer><div class="wrap"><div class="row">
   <span><a href="/#work">&larr; All work</a></span>
   <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
-</div></div></footer>
-</body></html>
+</div></div></footer></body></html>
