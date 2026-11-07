@@ -2,7 +2,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jamarama &mdash; Dylan Cantor</title>
 <meta name="description" content="A real-time multiplayer jam system. Winner, Audiotool Challenge, Google DeepMind Magenta Hackathon.">
-<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css?v15">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css?v16">
 </head><body>
 <nav><div class="wrap">
   <a class="name" href="/">Dylan Cantor</a>
@@ -34,8 +34,16 @@
     <p>The interesting constraint was never what the model could generate. It was what the model could generate <em>in time</em> &mdash; and that answer came from measuring rather than assuming.</p>
   </div>
 
+  <h2>What the texture layer is for</h2>
+
+  <p>A clock-locked band of drums, chords and lead is tight, and it is thin. Four quantised parts, every onset landing exactly where you expect it, nothing in the gaps. What is missing is everything that makes a room sound occupied: density between the hits, timbre that does not repeat bar to bar, the sense that something is happening slightly off to one side of you.</p>
+
+  <p>That is the job the model does. It runs continuously underneath the band, conditioned on the blended taste of whoever is actually playing, the chord the harmony player is holding right now, and the crowd-energy dial &mdash; so the texture follows the performance instead of ignoring it. Change the chord and the layer moves with the band; push crowd energy and it thickens. It carries harmonic and timbral information but no transients anyone is counting on, which is exactly why it can add complexity without adding anything that is capable of being late.</p>
+
+  <p>Keeping it off the grid is what turns a defect into realism. On the grid, thirty seconds of drift is a band coming apart. Off the grid there is no downbeat for it to be late against, so the same drift reads as air in the room &mdash; a layer breathing against the beat rather than failing to hold it. Four people on four phones end up sounding like more than four parts, and the thing they are playing into sounds like a space rather than a sequencer.</p>
+
   <figure>
-    <img src="img/jamarama-hackathon.jpg?v15" alt="On stage at the Music Hack Space hackathon, Berklee" width="1400" height="934" loading="lazy">
+    <img src="img/jamarama-hackathon.jpg?v16" alt="On stage at the Music Hack Space hackathon, Berklee" width="1400" height="934" loading="lazy">
     <figcaption>Music Hack Space hackathon, hosted at Berklee. Built with Sai Nellutla</figcaption>
   </figure>
 
@@ -45,5 +53,5 @@
   <span><a href="/#work">&larr; All work</a></span>
   <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
 </div></div></footer>
-<script src="player.js?v15" defer></script>
+<script src="player.js?v16" defer></script>
 </body></html>
