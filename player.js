@@ -1,28 +1,33 @@
-/* Sticky listening bar. Lives on every page and keeps its place across navigations.
-   EDUCATION plays straight through and rolls into "I Feel Like" at the end.
-   "I Feel Like" on its own does not advance to anything. */
+/* Sticky listening bar.
+   EDUCATION is six files but one 49:17 timeline: the scrubber spans the whole
+   album and seeking crosses file boundaries. It rolls into "I Feel Like" at the
+   end. "I Feel Like" on its own does not advance to anything. */
 (function () {
-  var ALBUM = "EDUCATION";
+  /* measured durations of the six EDUCATION parts, in order */
+  var ALBUM_LEN = [899.866, 860.160, 163.239, 261.669, 460.617, 311.719];
+  var ALBUM_OFF = [], ALBUM_TOTAL = 0;
+  for (var z = 0; z < ALBUM_LEN.length; z++) { ALBUM_OFF.push(ALBUM_TOTAL); ALBUM_TOTAL += ALBUM_LEN[z]; }
+  var ALBUM_N = ALBUM_LEN.length;
 
   var TRACKS = [
-    { title: "EDUCATION",   artist: ALBUM + " · I",   src: "audio/education-1.mp3", album: true },
-    { title: "EDUCATION",   artist: ALBUM + " · II",  src: "audio/education-2.mp3", album: true },
-    { title: "EDUCATION",   artist: ALBUM + " · III", src: "audio/education-3.mp3", album: true },
-    { title: "EDUCATION",   artist: ALBUM + " · IV",  src: "audio/education-4.mp3", album: true },
-    { title: "EDUCATION",   artist: ALBUM + " · V",   src: "audio/education-5.mp3", album: true },
-    { title: "EDUCATION",   artist: ALBUM + " · VI",  src: "audio/education-6.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "audio/education-1.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "audio/education-2.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "audio/education-3.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "audio/education-4.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "audio/education-5.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "audio/education-6.mp3", album: true },
     { title: "I Feel Like", artist: "IRCAM — binaural mix", src: "audio/ifeellike-binaural.mp3" }
   ];
 
   var RELEASES = [
-    { name: "Finch",         id: "5OhOl99IUJG1bYXtMftRXG" },
-    { name: "Fritz Rango",   id: "6Z0Ak0Kk23AmTuu7juFcqd" },
-    { name: "Bruner",        id: "6PhPHwmqXbgYSihzFU77fu" },
-    { name: "Whippet",       id: "4KabMRpPXdbHJeJETz6q8K" },
-    { name: "Ozstriker",     id: "6fQElZqvTULbOLZQwGHXO2" },
-    { name: "Lord Whippet",  id: "4OzrxEtLvMS2aWTOjGylBq" },
-    { name: "iLLER BOYS",    id: "12tbobwCUkZ7dAw99eA229" },
-    { name: "Close Quarters",id: "4qhQLFoaOepWbxyHKl7WFk" }
+    { name: "Finch",          id: "5OhOl99IUJG1bYXtMftRXG" },
+    { name: "Fritz Rango",    id: "6Z0Ak0Kk23AmTuu7juFcqd" },
+    { name: "Bruner",         id: "6PhPHwmqXbgYSihzFU77fu" },
+    { name: "Whippet",        id: "4KabMRpPXdbHJeJETz6q8K" },
+    { name: "Ozstriker",      id: "6fQElZqvTULbOLZQwGHXO2" },
+    { name: "Lord Whippet",   id: "4OzrxEtLvMS2aWTOjGylBq" },
+    { name: "iLLER BOYS",     id: "12tbobwCUkZ7dAw99eA229" },
+    { name: "Close Quarters", id: "4qhQLFoaOepWbxyHKl7WFk" }
   ];
 
   var KEY = "dc-player";
@@ -31,6 +36,10 @@
     var saved = JSON.parse(sessionStorage.getItem(KEY) || "null");
     if (saved && typeof saved.i === "number" && TRACKS[saved.i]) state = saved;
   } catch (e) {}
+
+  var pendingSeek = null, pendingPlay = false;
+
+  function isAlbum(i) { return !!(TRACKS[i] && TRACKS[i].album); }
 
   function save() {
     try {
@@ -42,6 +51,20 @@
     if (!isFinite(s) || s < 0) s = 0;
     var m = Math.floor(s / 60), r = Math.floor(s % 60);
     return m + ":" + (r < 10 ? "0" : "") + r;
+  }
+
+  /* position on the timeline the bar is showing */
+  function nowPos() {
+    var t = audio.currentTime || 0;
+    return isAlbum(state.i) ? ALBUM_OFF[state.i] + t : t;
+  }
+  function fullLen() {
+    if (isAlbum(state.i)) return ALBUM_TOTAL;
+    return isFinite(audio.duration) ? audio.duration : 0;
+  }
+  function partAt(pos) {
+    for (var k = ALBUM_N - 1; k >= 0; k--) if (pos >= ALBUM_OFF[k]) return k;
+    return 0;
   }
 
   var bar = document.createElement("div");
@@ -89,19 +112,16 @@
       paneHere = q(".pl-pane-here"), paneSpot = q(".pl-pane-spotify"),
       panel = q(".pl-panel"), panelTitle = q(".pl-panel-title"), embed = q(".pl-embed");
 
-  /* --- menu: tracks on this site --- */
   TRACKS.forEach(function (t, i) {
-    if (t.album && i > 0) return; // the album is one entry; parts chain automatically
+    if (t.album && i > 0) return;
     var li = document.createElement("li");
-    var label = t.album ? ALBUM : t.title;
-    var sub = t.album ? "album · plays through" : t.artist;
-    li.innerHTML = '<button type="button"><b>' + label + '</b><span>' + sub + '</span></button>';
+    var sub = t.album ? "Album · " + fmt(ALBUM_TOTAL) : t.artist;
+    li.innerHTML = '<button type="button"><b>' + t.title + '</b><span>' + sub + '</span></button>';
     li.dataset.i = i;
     li.querySelector("button").addEventListener("click", function () { load(i, true); closeMenu(); });
     paneHere.appendChild(li);
   });
 
-  /* --- menu: Spotify --- */
   RELEASES.forEach(function (r) {
     var li = document.createElement("li");
     li.innerHTML = '<button type="button"><b>' + r.name + '</b><span>Spotify</span></button>';
@@ -130,20 +150,19 @@
 
   function markMenu() {
     Array.prototype.forEach.call(paneHere.children, function (li) {
-      var i = Number(li.dataset.i), t = TRACKS[state.i];
-      li.classList.toggle("on", t && (t.album ? TRACKS[i].album : i === state.i));
+      var i = Number(li.dataset.i);
+      li.classList.toggle("on", isAlbum(state.i) ? isAlbum(i) : i === state.i);
     });
   }
 
-  function load(i, play) {
+  function load(i, play, seekWithin) {
     state.i = ((i % TRACKS.length) + TRACKS.length) % TRACKS.length;
     var t = TRACKS[state.i];
     audio.src = t.src;
     elTitle.textContent = t.title;
     elArtist.textContent = t.artist;
-    elSeek.value = 0;
-    elCur.textContent = "0:00";
-    elDur.textContent = "0:00";
+    pendingSeek = (typeof seekWithin === "number") ? seekWithin : null;
+    paint();
     markMenu();
     save();
     if (play) { panel.hidden = true; embed.innerHTML = ""; audio.play().catch(function () { setIcon(false); }); }
@@ -154,11 +173,21 @@
     bar.classList.toggle("playing", playing);
   }
 
+  function paint() {
+    var len = fullLen(), pos = nowPos();
+    elDur.textContent = len ? fmt(len) : "0:00";
+    elCur.textContent = fmt(pos);
+    if (!seeking) elSeek.value = len ? Math.round(pos / len * 1000) : 0;
+  }
+
   elPlay.addEventListener("click", function () {
     if (audio.paused) { panel.hidden = true; embed.innerHTML = ""; audio.play().catch(function () {}); }
     else audio.pause();
   });
-  elNext.addEventListener("click", function () { load(state.i + 1, true); });
+  elNext.addEventListener("click", function () {
+    // from anywhere in the album, next means "I Feel Like"; otherwise wrap round
+    load(isAlbum(state.i) ? ALBUM_N : 0, true);
+  });
 
   function closeMenu() { elMenu.hidden = true; elList.setAttribute("aria-expanded", "false"); }
   elList.addEventListener("click", function (e) {
@@ -171,30 +200,40 @@
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
 
   var seeking = false;
-  elSeek.addEventListener("input", function () { seeking = true; elCur.textContent = fmt(audio.duration * elSeek.value / 1000); });
+  elSeek.addEventListener("input", function () {
+    seeking = true;
+    elCur.textContent = fmt(fullLen() * elSeek.value / 1000);
+  });
   elSeek.addEventListener("change", function () {
-    if (isFinite(audio.duration)) audio.currentTime = audio.duration * elSeek.value / 1000;
+    var target = fullLen() * elSeek.value / 1000;
     seeking = false;
+    if (isAlbum(state.i)) {
+      var j = partAt(target), within = target - ALBUM_OFF[j];
+      if (j === state.i) { audio.currentTime = Math.min(within, (audio.duration || within)); }
+      else { load(j, !audio.paused, within); }
+    } else if (isFinite(audio.duration)) {
+      audio.currentTime = target;
+    }
+    paint();
     save();
   });
 
   audio.addEventListener("loadedmetadata", function () {
-    elDur.textContent = fmt(audio.duration);
-    if (state.t > 0 && state.t < audio.duration) { audio.currentTime = state.t; state.t = 0; }
+    if (pendingSeek !== null) {
+      audio.currentTime = Math.max(0, Math.min(pendingSeek, audio.duration - 0.25));
+      pendingSeek = null;
+    } else if (state.t > 0 && state.t < audio.duration) {
+      audio.currentTime = state.t; state.t = 0;
+    }
+    paint();
   });
-  audio.addEventListener("timeupdate", function () {
-    if (seeking || !isFinite(audio.duration)) return;
-    elSeek.value = Math.round(audio.currentTime / audio.duration * 1000);
-    elCur.textContent = fmt(audio.currentTime);
-  });
+  audio.addEventListener("timeupdate", function () { if (!seeking) paint(); });
   audio.addEventListener("play", function () { setIcon(true); save(); });
   audio.addEventListener("pause", function () { setIcon(false); save(); });
 
   audio.addEventListener("ended", function () {
     var next = state.i + 1;
-    // an album part rolls into the next part, and the last part into "I Feel Like".
-    // anything that is not part of the album stops at the end.
-    if (TRACKS[state.i].album && TRACKS[next]) load(next, true);
+    if (isAlbum(state.i) && TRACKS[next]) load(next, true);
     else { setIcon(false); save(); }
   });
 
@@ -210,7 +249,7 @@
         }
       }
       if (typeof i !== "number") i = state.i;
-      if (i === state.i) {
+      if (i === state.i || (isAlbum(i) && isAlbum(state.i))) {
         if (audio.paused) { panel.hidden = true; audio.play().catch(function () {}); } else audio.pause();
         return;
       }

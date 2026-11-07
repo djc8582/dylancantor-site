@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clockworks &mdash; Dylan Cantor</title>
+<meta name="description" content="A polyrhythmic composition tool for iOS. Concentric clocks, one tempo, MIDI export.">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css?v=6">
+</head><body>
+<nav><div class="wrap">
+  <a class="name" href="/">Dylan Cantor</a>
+  <ul><li><a href="/#work" aria-current="page">Work</a></li><li><a href="/#music">Music</a></li><li><a href="/#about">About</a></li><li><a href="/Cantor_Dylan_CV.pdf">CV</a></li></ul>
+</div></nav>
+<header class="proj-head"><div class="wrap">
+  <a class="backlink" href="/#work">&larr; Work</a>
+  <h1>Clockworks</h1>
+  <p class="lead">Polyrhythm is hard to notate and easy to see.</p>
+  <div class="meta">
+    <span><b>Role</b><i>Sole designer and engineer</i></span>
+    <span><b>Date</b><i>2026</i></span>
+    <span><b>Platform</b><i>iOS &mdash; React Native with a native audio engine</i></span>
+  </div>
+</div></header>
+
+<div class="body-copy"><div class="wrap">
+  <p>Each ring is a clock running its own subdivision against one shared tempo. Place notes on a ring and they fire when the hand passes them, so a 5-against-4 is something you watch line up rather than something you count. Patterns export as MIDI.</p>
+
+  <ul class="points">
+    <li>Rendering is GPU-accelerated through Skia, with the clock hands driven by Reanimated shared values on the UI thread so the animation never stutters when JavaScript is busy.</li>
+    <li>Audio runs on the native thread through a Web Audio implementation, with a <strong>24-voice pool</strong> and hard voice stealing &mdash; deferred disconnects crash the native graph, so evicted voices are stopped and disconnected immediately.</li>
+    <li>Hybrid timbres: sampled instruments across six octaves plus synthesized ones rendered into buffers at startup, batched asynchronously so the JS thread stays responsive while the app loads.</li>
+    <li>Patterns write out as standard MIDI files and share straight into a DAW.</li>
+  </ul>
+
+  <p class="links">React Native &middot; Expo &middot; Skia &middot; react-native-audio-api &middot; Reanimated &middot; midi-writer-js</p>
+</div></div>
+<footer><div class="wrap"><div class="row">
+  <span><a href="/#work">&larr; All work</a></span>
+  <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
+</div></div></footer>
+<script src="player.js?v=6" defer></script>
+</body></html>
