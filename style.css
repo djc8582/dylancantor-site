@@ -162,7 +162,8 @@ ol.index a:hover .ar{color:var(--accent);transform:translateX(3px)}
 .mgroup + .mgroup{border-left:1px solid var(--rule);padding-left:46px}
 .mlabel{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;
   text-transform:uppercase;color:var(--ink-3);margin:20px 0 0}
-.mnote{font-size:14px;color:var(--ink-2);margin-top:16px;max-width:34ch}
+.mnote{font-size:14.5px;color:var(--ink-2);margin:12px 0 0;max-width:36ch}
+.mgroup p.cue{margin:18px 0 4px}
 .music-fig{margin:0}
 .music-fig img{display:block;width:100%;height:auto;border-radius:2px}
 .music-fig figcaption{font-size:10px;color:var(--ink-3);margin-top:9px;
