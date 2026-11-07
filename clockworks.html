@@ -2,7 +2,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Clockworks &mdash; Dylan Cantor</title>
 <meta name="description" content="A polyrhythmic composition tool for iOS. Concentric clocks, one tempo, MIDI export.">
-<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css?v18">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css?v19">
 </head><body>
 <nav><div class="wrap">
   <a class="name" href="/">Dylan Cantor</a>
@@ -25,14 +25,14 @@
 
   <ul class="points">
     <li>Rendering is GPU-accelerated through Skia, with the clock hands driven by Reanimated shared values on the UI thread so the animation never stutters when JavaScript is busy.</li>
-    <li>Audio runs on the native thread through a Web Audio implementation, with a <strong>24-voice pool</strong> and hard voice stealing &mdash; deferred disconnects crash the native graph, so evicted voices are stopped and disconnected immediately.</li>
+    <li>Audio runs on the native thread through a Web Audio implementation, with a <strong>24-voice pool</strong> and hard voice stealing. Deferred disconnects crash the native graph, so evicted voices are stopped and disconnected immediately.</li>
     <li>Hybrid timbres: sampled instruments across six octaves plus synthesized ones rendered into buffers at startup, batched asynchronously so the JS thread stays responsive while the app loads.</li>
     <li>Patterns write out as standard MIDI files and share straight into a DAW.</li>
   </ul>
 
   <div class="linkcards">
     <a class="lc" href="https://apps.apple.com/us/app/clockworks-easy-polyrhythms/id6780532729" target="_blank" rel="noopener">
-      <span class="lc-th"><img src="img/logo-clockworks.png?v18" alt="" loading="lazy"></span>
+      <span class="lc-th"><img src="img/logo-clockworks.png?v19" alt="" loading="lazy"></span>
       <span class="lc-tx">
         <span class="lc-t">Clockworks: Easy Polyrhythms</span>
         <span class="lc-d">Download on the App Store</span>
@@ -47,5 +47,5 @@
   <span><a href="/#work">&larr; All work</a></span>
   <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
 </div></div></footer>
-<script src="player.js?v18" defer></script>
+<script src="player.js?v19" defer></script>
 </body></html>
