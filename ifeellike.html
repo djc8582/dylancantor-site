@@ -6,7 +6,7 @@
 </head><body>
 <nav><div class="wrap">
   <a class="name" href="/">Dylan Cantor</a>
-  <ul><li><a href="/#work" aria-current="page">Work</a></li><li><a href="/#music">Music</a></li><li><a href="/#about">About</a></li><li><a href="/Cantor_Dylan_CV.pdf">CV</a></li></ul>
+  <ul><li><a href="/#work" aria-current="page">Work</a></li><li><a href="/#music">Music</a></li><li><a href="/#about">About</a></li><li><a href="/Cantor_Dylan_CV.pdf" target="_blank" rel="noopener">CV</a></li></ul>
 </div></nav>
 <header class="proj-head"><div class="wrap">
   <a class="backlink" href="/#work">&larr; Work</a>
@@ -48,11 +48,45 @@
       <span>Cantor_I-Feel-Like_IRCAM.pdf &middot; 10 pages</span>
       <a href="/Cantor_I-Feel-Like_IRCAM.pdf" target="_blank" rel="noopener">Open &#8599;</a>
     </div>
-    <object data="/Cantor_I-Feel-Like_IRCAM.pdf#view=FitH&amp;toolbar=1" type="application/pdf" aria-label="Project paper">
-      <p class="pdffallback"><a href="/Cantor_I-Feel-Like_IRCAM.pdf">Open the project paper (PDF)</a></p>
-    </object>
-    <p class="pdffallback"><a href="/Cantor_I-Feel-Like_IRCAM.pdf">Open the project paper (PDF)</a></p>
+    <div class="pdfpages" id="pdfpages"><p class="pdfnote">Loading the paper&hellip;</p></div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+  (function () {
+    var box = document.getElementById('pdfpages');
+    var URL_ = '/Cantor_I-Feel-Like_IRCAM.pdf';
+    function bail() {
+      box.innerHTML = '<p class="pdfnote"><a href="' + URL_ + '">Open the project paper (PDF)</a></p>';
+    }
+    if (!window.pdfjsLib) { bail(); return; }
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    pdfjsLib.getDocument(URL_).promise.then(function (pdf) {
+      box.innerHTML = '';
+      var width = box.clientWidth || 700;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var chain = Promise.resolve();
+      for (var n = 1; n <= pdf.numPages; n++) {
+        (function (num) {
+          chain = chain.then(function () {
+            return pdf.getPage(num).then(function (page) {
+              var base = page.getViewport({ scale: 1 });
+              var vp = page.getViewport({ scale: (width / base.width) * dpr });
+              var c = document.createElement('canvas');
+              c.className = 'pdfpage';
+              c.width = Math.floor(vp.width);
+              c.height = Math.floor(vp.height);
+              box.appendChild(c);
+              return page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+            });
+          });
+        })(n);
+      }
+      return chain;
+    }).catch(bail);
+  })();
+  </script>
 
   <p class="links">Reaper &middot; Ableton Live &middot; IEM Plug-in Suite &middot; Zoom H6 omni pair</p>
 </div></div>

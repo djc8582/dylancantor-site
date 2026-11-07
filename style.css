@@ -111,9 +111,13 @@ a.lc:hover{border-color:var(--accent);transform:translateY(-1px)}
   font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.08em;
   text-transform:uppercase;color:var(--ink-3)}
 .pdfbar a{color:var(--accent);border:0}
-.pdfbox object,.pdfbox iframe{display:block;width:100%;height:780px;border:0;background:var(--tint)}
-.pdffallback{display:none;padding:26px 16px;text-align:center}
-.pdffallback a{color:var(--accent)}
+.pdfpages{max-height:min(78vh,860px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+  background:var(--tint);padding:14px;display:flex;flex-direction:column;gap:14px}
+canvas.pdfpage{display:block;width:100%;height:auto;background:#fff;border-radius:2px;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.pdfnote{margin:0;padding:34px 16px;text-align:center;font-family:"JetBrains Mono",monospace;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
+.pdfnote a{color:var(--accent)}
 
 /* ---------- sections ---------- */
 section{padding-block:62px}
@@ -131,8 +135,8 @@ ol.index a{display:grid;grid-template-columns:30px 58px minmax(0,1fr) 16px;
 ol.index a:hover{background:var(--tint)}
 .ix{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-3);
   letter-spacing:.06em;align-self:start;padding-top:3px}
-.th{width:58px;height:58px;border-radius:7px;overflow:hidden;display:flex;
-  align-items:center;justify-content:center;flex:0 0 auto;align-self:start;
+.th{width:58px;height:58px;border-radius:13px;overflow:hidden;display:flex;
+  align-items:center;justify-content:center;flex:0 0 auto;align-self:center;
   border:1px solid var(--rule-soft);background:var(--raise)}
 .th img{display:block}
 .th.icon img{width:100%;height:100%;object-fit:cover}
@@ -148,14 +152,20 @@ ol.index a:hover{background:var(--tint)}
 ol.index a:hover .ar{color:var(--accent);transform:translateX(3px)}
 
 /* ---------- music ---------- */
-.music-grid{display:grid;grid-template-columns:minmax(0,1fr) 268px;gap:44px;align-items:start}
-.music-text p{max-width:52ch}
-.music-figs{display:flex;flex-direction:column;gap:22px}
+.music-intro{max-width:62ch;margin-bottom:34px}
+.music-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:0;
+  border-top:1px solid var(--rule)}
+.mgroup{padding:28px 0 4px}
+.mgroup:first-child{padding-right:46px}
+.mgroup + .mgroup{border-left:1px solid var(--rule);padding-left:46px}
+.mlabel{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-3);margin:20px 0 0}
+.mnote{font-size:14px;color:var(--ink-2);margin-top:16px;max-width:34ch}
 .music-fig{margin:0}
 .music-fig img{display:block;width:100%;height:auto;border-radius:2px}
 .music-fig figcaption{font-size:10px;color:var(--ink-3);margin-top:9px;
   letter-spacing:.11em;text-transform:uppercase;line-height:1.5}
-ul.releases{margin-top:26px;border-top:1px solid var(--rule-soft)}
+ul.releases{margin-top:10px;border-top:1px solid var(--rule-soft)}
 ul.releases li{margin:0;padding:10px 0;border-bottom:1px solid var(--rule-soft);
   display:flex;align-items:baseline;justify-content:space-between;gap:16px;
   font-size:15px;color:var(--ink)}
@@ -312,20 +322,22 @@ body.has-player{padding-bottom:64px}
 
   ol.index a{grid-template-columns:46px minmax(0,1fr);gap:16px;padding:17px 8px;margin-inline:-8px}
   .ix,.ar{display:none}
-  .th{width:46px;height:46px;border-radius:6px}
+  .th{width:48px;height:48px;border-radius:11px}
   .tt{font-size:17px}
   .td{font-size:14px}
 
-  .music-grid{grid-template-columns:1fr;gap:26px}
-  .music-text p{max-width:none}
-  .music-figs{flex-direction:row;gap:14px;align-items:flex-start}
-  .music-figs .music-fig{flex:1 1 0;min-width:0}
+  .music-intro{max-width:none;margin-bottom:24px}
+  .music-split{grid-template-columns:1fr}
+  .mgroup{padding:24px 0 8px}
+  .mgroup:first-child{padding-right:0}
+  .mgroup + .mgroup{border-left:0;border-top:1px solid var(--rule);padding-left:0}
+  .mgroup .music-fig{max-width:300px}
+  .mnote{max-width:none}
 
   .presscard{grid-template-columns:1fr;gap:16px;padding:14px;margin-inline:-14px}
   .pc-kicker{margin-bottom:8px}
 
-  .pdfbox object,.pdfbox iframe{display:none}
-  .pdffallback{display:block}
+  .pdfpages{max-height:66vh;padding:10px;gap:10px}
 
   .shots{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .meta span{flex-direction:column;gap:1px}
