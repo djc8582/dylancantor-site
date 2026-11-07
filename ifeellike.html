@@ -2,7 +2,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>I Feel Like &mdash; Dylan Cantor</title>
 <meta name="description" content="An ambisonic production made at IRCAM, Paris, decoded for a 3D speaker layout and for headphones.">
-<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css?v8">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css?v9">
 </head><body>
 <nav><div class="wrap">
   <a class="name" href="/">Dylan Cantor</a>
@@ -64,7 +64,9 @@
       'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     pdfjsLib.getDocument(URL_).promise.then(function (pdf) {
       box.innerHTML = '';
-      var width = box.clientWidth || 700;
+      var cs = window.getComputedStyle(box);
+      var pad = parseFloat(cs.paddingLeft || 0) + parseFloat(cs.paddingRight || 0);
+      var width = Math.max(240, (box.clientWidth || 700) - pad);
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
       var chain = Promise.resolve();
       for (var n = 1; n <= pdf.numPages; n++) {
@@ -94,5 +96,5 @@
   <span><a href="/#work">&larr; All work</a></span>
   <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
 </div></div></footer>
-<script src="player.js?v8" defer></script>
+<script src="player.js?v9" defer></script>
 </body></html>

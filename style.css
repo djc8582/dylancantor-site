@@ -113,9 +113,10 @@ a.lc:hover{border-color:var(--accent);transform:translateY(-1px)}
   text-transform:uppercase;color:var(--ink-3)}
 .pdfbar a{color:var(--accent);border:0}
 .pdfpages{max-height:min(78vh,860px);overflow-y:auto;-webkit-overflow-scrolling:touch;
-  background:var(--tint);padding:14px;display:flex;flex-direction:column;gap:14px}
-canvas.pdfpage{display:block;width:100%;height:auto;background:#fff;border-radius:2px;
-  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+  background:var(--tint);padding:14px;display:flex;flex-direction:column;
+  align-items:center;gap:14px}
+canvas.pdfpage{display:block;width:100%;max-width:100%;height:auto;margin:0 auto;
+  background:#fff;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .pdfnote{margin:0;padding:34px 16px;text-align:center;font-family:"JetBrains Mono",monospace;
   font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
 .pdfnote a{color:var(--accent)}
