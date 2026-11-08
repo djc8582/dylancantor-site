@@ -23,13 +23,6 @@
 <div class="body-copy"><div class="wrap">
   <p>Each ring is a clock running its own subdivision against one shared tempo. Put notes on a ring and they sound as the hand reaches them, so a 5-against-4 is a thing you can see arrive. Patterns export as MIDI and share straight into a DAW.</p>
 
-  <ul class="points">
-    <li>Rendering is GPU-accelerated through Skia, with the clock hands driven by Reanimated shared values on the UI thread so the animation never stutters when JavaScript is busy.</li>
-    <li>Audio runs on the native thread through a Web Audio implementation, with a <strong>24-voice pool</strong> and hard voice stealing. Deferred disconnects crash the native graph, so evicted voices are stopped and disconnected immediately.</li>
-    <li>Hybrid timbres: sampled instruments across six octaves plus synthesized ones rendered into buffers at startup, batched asynchronously so the JS thread stays responsive while the app loads.</li>
-    <li>Patterns write out as standard MIDI files and share straight into a DAW.</li>
-  </ul>
-
   <div class="linkcards">
     <a class="lc" href="https://apps.apple.com/us/app/clockworks-easy-polyrhythms/id6780532729" target="_blank" rel="noopener">
       <span class="lc-th"><img src="img/logo-clockworks.png?v21" alt="" loading="lazy"></span>
@@ -40,6 +33,13 @@
       </span>
     </a>
   </div>
+
+  <ul class="points">
+    <li>Rendering is GPU-accelerated through Skia, with the clock hands driven by Reanimated shared values on the UI thread so the animation never stutters when JavaScript is busy.</li>
+    <li>Audio runs on the native thread through a Web Audio implementation, with a <strong>24-voice pool</strong> and hard voice stealing. Deferred disconnects crash the native graph, so evicted voices are stopped and disconnected immediately.</li>
+    <li>Hybrid timbres: sampled instruments across six octaves plus synthesized ones rendered into buffers at startup, batched asynchronously so the JS thread stays responsive while the app loads.</li>
+    <li>Patterns write out as standard MIDI files and share straight into a DAW.</li>
+  </ul>
 
   <p class="links">React Native &middot; Expo &middot; Skia &middot; react-native-audio-api &middot; Reanimated &middot; midi-writer-js</p>
 </div></div>
