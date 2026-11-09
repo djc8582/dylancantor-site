@@ -43,3 +43,7 @@
 # since a new master may replace a file under the same name.
 /audio/*
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/store-assets/*
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
