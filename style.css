@@ -167,6 +167,7 @@ section + section{border-top:1px solid var(--rule)}
 /* ---------- work index ---------- */
 ol.index{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
 ol.index li{border-bottom:1px solid var(--rule)}
+section > .wrap > ol.index:last-child li:last-child{border-bottom:0}
 ol.index a{display:grid;grid-template-columns:30px 58px minmax(0,1fr) 16px;
   gap:22px;align-items:center;padding:22px 10px 22px 2px;margin-inline:-10px -10px;
   border-radius:4px;transition:background .13s ease}

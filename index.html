@@ -239,7 +239,7 @@
  ]
 }
 </script>
-<link rel="icon" href="data:,"><link rel="preload" href="/fonts/archivo-latin.8f704806.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.18be4527.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" as="image" type="image/avif" imagesrcset="/opt/photo-drums.d5342501-420.avif 420w, /opt/photo-drums.d5342501-700.avif 700w, /opt/photo-drums.d5342501-980.avif 980w, /opt/photo-drums.d5342501-1400.avif 1400w" imagesizes="(max-width:720px) calc(100vw - 40px), 563px" fetchpriority="high"><link rel="stylesheet" href="style.css?v25">
+<link rel="icon" href="data:,"><link rel="preload" href="/fonts/archivo-latin.8f704806.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.18be4527.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" as="image" type="image/avif" imagesrcset="/opt/photo-drums.d5342501-420.avif 420w, /opt/photo-drums.d5342501-700.avif 700w, /opt/photo-drums.d5342501-980.avif 980w, /opt/photo-drums.d5342501-1400.avif 1400w" imagesizes="(max-width:720px) calc(100vw - 40px), 563px" fetchpriority="high"><link rel="stylesheet" href="style.css?v26">
 </head><body>
 
 <nav><div class="wrap">
@@ -248,7 +248,7 @@
     <li><a href="#work">Work</a></li>
     <li><a href="#music">Music</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="/Cantor_Dylan_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+    <li><a href="#cv">CV</a></li>
   </ul>
 </div></nav>
 <main>
@@ -393,9 +393,77 @@
   <div class="sec-head"><h2>About</h2><p>NYU &middot; Brooklyn</p></div>
   <div class="measure">
   <p>Double major in Music Technology (B.M., Steinhardt) and Computer Science (CAS), minor in Mathematics. Coursework in digital signal processing, operating systems, probability and statistics, artificial intelligence, analog and digital electronics, algorithms, electronic music synthesis, and Max/MSP.</p>
-  <p>Interests: real-time audio DSP, on-device inference, spatial audio, music information retrieval, interactive performance systems.</p>
+  <p>Research interests: real-time audio DSP, on-device inference, spatial audio, music information retrieval, interactive performance systems.</p>
+  <p>As a musician I play guitar, piano and drums. Lately I&rsquo;m most interested in combining electronic drums with modular synthesis.</p>
   <p><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></p>
   </div>
+</div></section>
+
+<section id="cv"><div class="wrap">
+  <div class="sec-head"><h2>CV</h2><p>PDF &middot; 2 pages</p></div>
+  <div class="pdfbox">
+    <div class="pdfbar">
+      <span>Cantor_Dylan_CV.pdf</span>
+      <a href="/Cantor_Dylan_CV.pdf" target="_blank" rel="noopener">Open &#8599;</a>
+    </div>
+    <div class="pdfpages" id="pdfpages"><p class="pdfnote">Loading the CV&hellip;</p></div>
+  </div>
+  <script>
+  /* pdf.js (~400 KB with its worker) and the CV itself only load once the
+     viewer is about to scroll into view, so they no longer hold up first paint. */
+  (function () {
+    var box = document.getElementById('pdfpages');
+    var URL_ = '/Cantor_Dylan_CV.pdf';
+    var CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+    function bail() {
+      box.innerHTML = '<p class="pdfnote"><a href="' + URL_ + '">Open the CV (PDF)</a></p>';
+    }
+    function render() {
+      if (!window.pdfjsLib) { bail(); return; }
+      pdfjsLib.GlobalWorkerOptions.workerSrc = CDN + 'pdf.worker.min.js';
+      pdfjsLib.getDocument(URL_).promise.then(function (pdf) {
+        box.innerHTML = '';
+        var cs = window.getComputedStyle(box);
+        var pad = parseFloat(cs.paddingLeft || 0) + parseFloat(cs.paddingRight || 0);
+        var width = Math.max(240, (box.clientWidth || 700) - pad);
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var chain = Promise.resolve();
+        for (var n = 1; n <= pdf.numPages; n++) {
+          (function (num) {
+            chain = chain.then(function () {
+              return pdf.getPage(num).then(function (page) {
+                var base = page.getViewport({ scale: 1 });
+                var vp = page.getViewport({ scale: (width / base.width) * dpr });
+                var c = document.createElement('canvas');
+                c.className = 'pdfpage';
+                c.width = Math.floor(vp.width);
+                c.height = Math.floor(vp.height);
+                box.appendChild(c);
+                return page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+              });
+            });
+          })(n);
+        }
+        return chain;
+      }).catch(bail);
+    }
+    var started = false;
+    function start() {
+      if (started) return;
+      started = true;
+      var s = document.createElement('script');
+      s.src = CDN + 'pdf.min.js';
+      s.onload = render;
+      s.onerror = bail;
+      document.head.appendChild(s);
+    }
+    if (!('IntersectionObserver' in window)) { start(); return; }
+    var io = new IntersectionObserver(function (es) {
+      if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); start(); }
+    }, { rootMargin: '800px 0px' });
+    io.observe(box);
+  })();
+  </script>
 </div></section>
 
 </main>
