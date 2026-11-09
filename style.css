@@ -33,7 +33,7 @@
   --raise:#ffffff;
   --ink:#101113;
   --ink-2:#54575d;
-  --ink-3:#8b8f96;
+  --ink-3:#686c73;
   --rule:#e3e2de;
   --rule-soft:#eeedea;
   --tint:#f2f2ef;
@@ -43,7 +43,7 @@
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --paper:#0a0b0c;--raise:#121315;--ink:#f3f3f1;--ink-2:#a5a9b0;--ink-3:#717680;
+    --paper:#0a0b0c;--raise:#121315;--ink:#f3f3f1;--ink-2:#a5a9b0;--ink-3:#868b94;
     --rule:#232528;--rule-soft:#1a1c1e;--tint:#141517;
     --accent:#93a6ff;--accent-soft:#171b2c;
   }

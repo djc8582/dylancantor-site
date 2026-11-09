@@ -98,7 +98,7 @@
  ]
 }
 </script>
-<link rel="icon" href="data:,"><link rel="preload" href="/fonts/archivo-latin.8f704806.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.18be4527.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/style.css?v26">
+<link rel="icon" href="data:,"><link rel="preload" href="/fonts/archivo-latin.8f704806.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.18be4527.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/style.css?v27">
 </head><body>
 <nav><div class="wrap">
   <a class="name" href="/">Dylan Cantor</a>
@@ -153,7 +153,7 @@
   <p>The creatures coordinate by phase, and you localize them by interaural phase and time. If Apple&rsquo;s spatializer computed that part, the one thing the project is about would happen inside a box I can&rsquo;t inspect or test. So the render is written in the app, and the platform only supplies the listener&rsquo;s pose.</p>
 
   <ul class="points">
-    <li>Per creature and per ear: a 128-tap minimum-phase HRIR from the MIT KEMAR measurements, then the measured ITD as a cubic Lagrange fractional delay, then 1/r gain and a low-pass for air absorption.</li>
+    <li>Per creature and per ear: a 128-tap minimum-phase HRIR from the MIT KEMAR measurements, then the measured ITD as a cubic Lagrange fractional delay, then distance gain and a low-pass for air absorption. The gain falls off faster than free-field 1/r (about &minus;22 dB at 3 m) and fades to silence between 5 and 8 m, so walking away from a group actually leaves it behind.</li>
     <li>HRIRs and ITD are interpolated bilinearly over the measured grid. When a creature&rsquo;s direction moves by more than 1&deg;, the block is rendered through the old and new filters and crossfaded, so turning never clicks. ITD and gain are smoothed per sample.</li>
     <li>Direct-form convolution with vDSP rather than FFT. At 128 taps the multiply counts come out about the same, and direct form adds no block latency.</li>
     <li>The audio thread does no locking or allocation: flat struct-of-arrays state, C11 atomics for voice-slot ownership, and a seqlock for the pose.</li>
@@ -180,7 +180,7 @@
 
   <h2>Integration, not invention</h2>
 
-  <p>Every piece of this comes from published work: phase-response models of animal choruses, the Kuramoto order parameter as a coherence readout, HRTF rendering, and head movement as the cue that separates front from back. What I did was put them together carefully. The headless engine has 74 unit tests covering the coupling, the traveling waves, and the render math. It makes no new scientific claim.</p>
+  <p>Every piece of this comes from published work: phase-response models of animal choruses, the Kuramoto order parameter as a coherence readout, HRTF rendering, and head movement as the cue that separates front from back. What I did was put them together carefully. The headless engine has unit tests covering the coupling, the traveling waves, and the render math. It makes no new scientific claim.</p>
 
   <p>The coupling constants are tuned in simulation for now. The next step is fitting them to statistics measured from real chorus recordings: the order parameter, the distribution of intervals between calls, and who leads whom.</p>
 
