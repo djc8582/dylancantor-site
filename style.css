@@ -129,6 +129,9 @@ a.lc:hover{border-color:var(--accent);transform:translateY(-1px)}
   border:1px solid var(--rule-soft);display:flex;align-items:center;justify-content:center}
 .lc-th img{width:100%;height:100%;object-fit:cover;display:block}
 .lc-th.contain img{width:auto;height:auto;max-width:76%;max-height:76%;object-fit:contain}
+a.lc.lc-store{grid-template-columns:120px minmax(0,1fr)}
+.lc-badge{display:flex;align-items:center}
+.lc-badge img{width:120px;height:40px;display:block}
 .lc-tx{min-width:0}
 .lc-t{display:block;font-size:13.5px;font-weight:600;color:var(--ink);letter-spacing:-.012em;
   line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
