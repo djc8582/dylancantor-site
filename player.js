@@ -321,17 +321,21 @@
     });
     if (!map.length) return;
 
+    // Above the first section (the intro), the underline sits under the name.
+    var home = document.querySelector("nav a.name");
     var ticking = false;
     function sync() {
       ticking = false;
       var y = window.pageYOffset + 120;
-      var best = map[0];
+      var best = null;
       map.forEach(function (m) { if (m.el.offsetTop <= y) best = m; });
       if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 80) {
         best = map[map.length - 1];
       }
       links.forEach(function (a) { a.removeAttribute("aria-current"); });
-      best.a.setAttribute("aria-current", "true");
+      if (home) home.removeAttribute("aria-current");
+      var on = best ? best.a : home;
+      if (on) on.setAttribute("aria-current", "true");
     }
     function onScroll() {
       if (!ticking) { ticking = true; window.requestAnimationFrame(sync); }
