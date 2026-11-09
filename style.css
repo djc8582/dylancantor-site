@@ -252,6 +252,9 @@ figcaption{font-size:10.5px;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .shots.store{grid-template-columns:repeat(4,minmax(0,1fr))}
 .shots img{width:100%;height:auto;display:block;border:1px solid var(--rule-soft);border-radius:8px}
 .shots.store img{border-radius:4px;background:#fff}
+.shots figure{margin:0}
+.shots.species{grid-template-columns:repeat(6,minmax(0,1fr))}
+.shots.species img{border:0;border-radius:0}
 
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));
   gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:30px 0}
@@ -377,6 +380,7 @@ body.has-player{padding-bottom:64px}
   .pdfpages{max-height:66vh;padding:10px;gap:10px}
 
   .shots,.shots.store{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .shots.species{grid-template-columns:repeat(3,minmax(0,1fr))}
   .meta span{flex-direction:column;gap:1px}
   .meta b{flex:none}
 

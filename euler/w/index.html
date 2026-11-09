@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Landing page for shared Euler walks: https://dylancantor.com/euler/w#<payload>.
+     Copied from the Euler repo's web/euler/w and restyled for this site.
+     No third-party scripts: the walk lives in the #fragment, which the
+     browser never sends to the server; keep it that way. (For the same reason
+     this page leaves out the site's album player and its Spotify embeds.) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,follow">
+<title>A walk for Euler</title>
+<meta name="description" content="A walk shared from Euler, an iPhone app that makes music from your walk.">
+<!-- Smart App Banner: fill in the App Store id once the app is live.
+<meta name="apple-itunes-app" content="app-id=APP_STORE_ID">
+-->
+<link rel="icon" href="data:,"><link rel="preload" href="/fonts/archivo-latin.8f704806.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.18be4527.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/style.css?v24">
+<style>
+  .walk{max-width:440px}
+  .walk h1{font-size:clamp(32px,6vw,44px);word-wrap:break-word;margin-bottom:10px}
+  #meta{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-3);min-height:1.6em}
+  #shape{display:block;margin:22px 0;color:var(--accent);background:var(--raise);
+    border:1px solid var(--rule);border-radius:7px;max-width:100%;height:auto}
+  #shape circle{stroke:var(--raise)}
+  #shape:empty{display:none}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+  .chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--rule);border-radius:999px;
+    padding:4px 11px 4px 9px;font-size:13px;color:var(--ink);background:var(--raise)}
+  .chip:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c,var(--ink-3))}
+  .warn{color:var(--ink)}
+  a.btn{display:block;text-align:center;font-weight:600;border-radius:999px;padding:13px;margin-top:12px;
+    font-size:15px;letter-spacing:-.01em;transition:background .14s ease,color .14s ease,border-color .14s ease}
+  a.btn.primary{background:var(--ink);color:var(--paper)}
+  a.btn.primary:hover{background:var(--accent);color:#fff}
+  a.btn.ghost{border:1px solid var(--rule);color:var(--ink)}
+  a.btn.ghost:hover{border-color:var(--accent)}
+  .hidden{display:none!important}
+  .fine{font-size:14px;margin-top:18px}
+</style>
+</head><body>
+<nav><div class="wrap">
+  <a class="name" href="/">Dylan Cantor</a>
+  <ul><li><a href="/#work" aria-current="page">Work</a></li><li><a href="/#music">Music</a></li><li><a href="/#about">About</a></li><li><a href="/Cantor_Dylan_CV.pdf" target="_blank" rel="noopener">CV</a></li></ul>
+</div></nav>
+<main>
+<header class="proj-head"><div class="wrap walk">
+  <a class="backlink" href="/euler/">&larr; Euler &middot; shared walk</a>
+  <h1 id="name">A walk for Euler</h1>
+  <div id="meta"></div>
+</div></header>
+
+<div class="body-copy"><div class="wrap walk">
+  <svg id="shape" width="220" height="220" viewBox="0 0 220 220" aria-label="Shape of the walk"></svg>
+  <div id="chips" class="chips"></div>
+  <p id="place" class="warn hidden">This walk is pinned to a real place. In Euler you can walk it there, or walk the same shape wherever you are.</p>
+  <p id="error" class="warn hidden"></p>
+  <p>Euler is an iPhone app that makes music from your walk: each stop has a musical style, and an AI model blends them live as you move between them.</p>
+  <a id="open" class="btn primary" href="#">Open in Euler</a>
+  <a id="store" class="btn ghost" href="/euler/">Get Euler for iPhone</a>
+  <p class="fine">If Euler is installed, tapping the link usually opens the app directly. If you landed here instead, use &ldquo;Open in Euler&rdquo;.</p>
+  <p class="fine">The walk is stored in this link itself, after the &ldquo;#&rdquo;. It is never sent to this website. &middot; <a href="/euler/privacy/">Privacy</a></p>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="row">
+  <span><a href="/euler/">&larr; Euler</a></span>
+  <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
+</div></div></footer>
+<script src="/euler/w/walklink.js"></script>
+<script src="/euler/w/page.js"></script>
+</body></html>

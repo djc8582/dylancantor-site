@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["J647Y35Y65.com.dylancantor.euler"],
+        "components": [
+          { "/": "/euler/w", "comment": "Euler shared walk (payload is in the #fragment)" },
+          { "/": "/euler/w/", "comment": "same, with trailing slash" }
+        ]
+      }
+    ]
+  }
+}

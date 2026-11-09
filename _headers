@@ -30,6 +30,15 @@
 /player.js
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
+# Euler Universal Links (apple-app-site-association). The file has no
+# extension, so Pages would serve it as application/octet-stream; iOS wants
+# JSON. Served at both paths Apple checks, 200 with no redirect. The default
+# max-age=0 caching is kept so an edit reaches Apple's CDN on its next fetch.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+/apple-app-site-association
+  Content-Type: application/json
+
 # Large mp3s, fetched with range requests only once play is pressed. A day,
 # since a new master may replace a file under the same name.
 /audio/*
