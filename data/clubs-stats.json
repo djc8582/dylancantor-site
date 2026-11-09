@@ -1,0 +1,25 @@
+{
+ "users": {
+  "total": 1976,
+  "onboarded": 1787,
+  "signups_7d": 424,
+  "signups_30d": 1015,
+  "with_school": 234,
+  "schools_total": 49
+ },
+ "projects": {
+  "new_30d": 136,
+  "public_active": 311,
+  "distinct_creators": 213
+ },
+ "activity": {
+  "dau_7d_avg": 68,
+  "swipes_30d": 24829,
+  "messages_30d": 2262,
+  "applications_30d": 3596
+ },
+ "caveats": [
+  "project counts exclude the seeded school import and school-only listings"
+ ],
+ "generated_at": "2026-11-09T03:10:21.165918+00:00"
+}
