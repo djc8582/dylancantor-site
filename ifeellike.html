@@ -138,7 +138,7 @@
  ]
 }
 </script>
-<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css?v21">
+<link rel="icon" href="data:,"><link rel="preload" href="/fonts/archivo-latin.8f704806.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin.18be4527.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v23">
 </head><body>
 <nav><div class="wrap">
   <a class="name" href="/">Dylan Cantor</a>
@@ -176,7 +176,7 @@
   </div>
 
   <figure>
-    <img src="img/ifeellike-spectrogram.png?v21" alt="Spectrogram of I Feel Like" loading="lazy">
+    <picture><source type="image/avif" srcset="opt/ifeellike-spectrogram.ef37d3c7-600.avif 600w, opt/ifeellike-spectrogram.ef37d3c7-900.avif 900w, opt/ifeellike-spectrogram.ef37d3c7-1200.avif 1200w" sizes="(max-width:720px) calc(100vw - 40px), 980px"><source type="image/webp" srcset="opt/ifeellike-spectrogram.ef37d3c7-600.webp 600w, opt/ifeellike-spectrogram.ef37d3c7-900.webp 900w, opt/ifeellike-spectrogram.ef37d3c7-1200.webp 1200w" sizes="(max-width:720px) calc(100vw - 40px), 980px"><img src="img/ifeellike-spectrogram.png?v21" width="1200" height="320" alt="Spectrogram of I Feel Like" loading="lazy" decoding="async"></picture>
     <figcaption>Full-length spectrogram, logarithmic frequency scale</figcaption>
   </figure>
 
@@ -191,42 +191,60 @@
     <div class="pdfpages" id="pdfpages"><p class="pdfnote">Loading the paper&hellip;</p></div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
+  /* pdf.js (~400 KB with its worker) and the paper itself only load once the
+     viewer is about to scroll into view, so they no longer hold up first paint. */
   (function () {
     var box = document.getElementById('pdfpages');
     var URL_ = '/Cantor_I-Feel-Like_IRCAM.pdf';
+    var CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
     function bail() {
       box.innerHTML = '<p class="pdfnote"><a href="' + URL_ + '">Open the project paper (PDF)</a></p>';
     }
-    if (!window.pdfjsLib) { bail(); return; }
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-    pdfjsLib.getDocument(URL_).promise.then(function (pdf) {
-      box.innerHTML = '';
-      var cs = window.getComputedStyle(box);
-      var pad = parseFloat(cs.paddingLeft || 0) + parseFloat(cs.paddingRight || 0);
-      var width = Math.max(240, (box.clientWidth || 700) - pad);
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      var chain = Promise.resolve();
-      for (var n = 1; n <= pdf.numPages; n++) {
-        (function (num) {
-          chain = chain.then(function () {
-            return pdf.getPage(num).then(function (page) {
-              var base = page.getViewport({ scale: 1 });
-              var vp = page.getViewport({ scale: (width / base.width) * dpr });
-              var c = document.createElement('canvas');
-              c.className = 'pdfpage';
-              c.width = Math.floor(vp.width);
-              c.height = Math.floor(vp.height);
-              box.appendChild(c);
-              return page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+    function render() {
+      if (!window.pdfjsLib) { bail(); return; }
+      pdfjsLib.GlobalWorkerOptions.workerSrc = CDN + 'pdf.worker.min.js';
+      pdfjsLib.getDocument(URL_).promise.then(function (pdf) {
+        box.innerHTML = '';
+        var cs = window.getComputedStyle(box);
+        var pad = parseFloat(cs.paddingLeft || 0) + parseFloat(cs.paddingRight || 0);
+        var width = Math.max(240, (box.clientWidth || 700) - pad);
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var chain = Promise.resolve();
+        for (var n = 1; n <= pdf.numPages; n++) {
+          (function (num) {
+            chain = chain.then(function () {
+              return pdf.getPage(num).then(function (page) {
+                var base = page.getViewport({ scale: 1 });
+                var vp = page.getViewport({ scale: (width / base.width) * dpr });
+                var c = document.createElement('canvas');
+                c.className = 'pdfpage';
+                c.width = Math.floor(vp.width);
+                c.height = Math.floor(vp.height);
+                box.appendChild(c);
+                return page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+              });
             });
-          });
-        })(n);
-      }
-      return chain;
-    }).catch(bail);
+          })(n);
+        }
+        return chain;
+      }).catch(bail);
+    }
+    var started = false;
+    function start() {
+      if (started) return;
+      started = true;
+      var s = document.createElement('script');
+      s.src = CDN + 'pdf.min.js';
+      s.onload = render;
+      s.onerror = bail;
+      document.head.appendChild(s);
+    }
+    if (!('IntersectionObserver' in window)) { start(); return; }
+    var io = new IntersectionObserver(function (es) {
+      if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); start(); }
+    }, { rootMargin: '800px 0px' });
+    io.observe(box);
   })();
   </script>
 
@@ -237,5 +255,5 @@
   <span><a href="/#work">&larr; All work</a></span>
   <span><a href="mailto:cantor.dylan@gmail.com">cantor.dylan@gmail.com</a></span>
 </div></div></footer>
-<script src="player.js?v21" defer></script>
+<script src="player.js?v23" defer></script>
 </body></html>

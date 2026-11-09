@@ -1,0 +1,650 @@
+{
+ "photo-drums.jpg": {
+  "width": 1400,
+  "height": 1170,
+  "avif": [
+   [
+    "opt/photo-drums.d5342501-420.avif",
+    420
+   ],
+   [
+    "opt/photo-drums.d5342501-700.avif",
+    700
+   ],
+   [
+    "opt/photo-drums.d5342501-980.avif",
+    980
+   ],
+   [
+    "opt/photo-drums.d5342501-1400.avif",
+    1400
+   ]
+  ],
+  "webp": [
+   [
+    "opt/photo-drums.d5342501-420.webp",
+    420
+   ],
+   [
+    "opt/photo-drums.d5342501-700.webp",
+    700
+   ],
+   [
+    "opt/photo-drums.d5342501-980.webp",
+    980
+   ],
+   [
+    "opt/photo-drums.d5342501-1400.webp",
+    1400
+   ]
+  ]
+ },
+ "wsn-clubs.jpg": {
+  "width": 1400,
+  "height": 934,
+  "avif": [
+   [
+    "opt/wsn-clubs.67b6cbc0-174.avif",
+    174
+   ],
+   [
+    "opt/wsn-clubs.67b6cbc0-700.avif",
+    700
+   ],
+   [
+    "opt/wsn-clubs.67b6cbc0-1400.avif",
+    1400
+   ]
+  ],
+  "webp": [
+   [
+    "opt/wsn-clubs.67b6cbc0-174.webp",
+    174
+   ],
+   [
+    "opt/wsn-clubs.67b6cbc0-700.webp",
+    700
+   ],
+   [
+    "opt/wsn-clubs.67b6cbc0-1400.webp",
+    1400
+   ]
+  ]
+ },
+ "jamarama-hackathon.jpg": {
+  "width": 1400,
+  "height": 934,
+  "avif": [
+   [
+    "opt/jamarama-hackathon.5f4db0f9-700.avif",
+    700
+   ],
+   [
+    "opt/jamarama-hackathon.5f4db0f9-1400.avif",
+    1400
+   ]
+  ],
+  "webp": [
+   [
+    "opt/jamarama-hackathon.5f4db0f9-700.webp",
+    700
+   ],
+   [
+    "opt/jamarama-hackathon.5f4db0f9-1400.webp",
+    1400
+   ]
+  ]
+ },
+ "music-growing-sqime.jpg": {
+  "width": 1200,
+  "height": 676,
+  "avif": [
+   [
+    "opt/music-growing-sqime.f8c5d643-300.avif",
+    300
+   ],
+   [
+    "opt/music-growing-sqime.f8c5d643-600.avif",
+    600
+   ],
+   [
+    "opt/music-growing-sqime.f8c5d643-900.avif",
+    900
+   ],
+   [
+    "opt/music-growing-sqime.f8c5d643-1200.avif",
+    1200
+   ]
+  ],
+  "webp": [
+   [
+    "opt/music-growing-sqime.f8c5d643-300.webp",
+    300
+   ],
+   [
+    "opt/music-growing-sqime.f8c5d643-600.webp",
+    600
+   ],
+   [
+    "opt/music-growing-sqime.f8c5d643-900.webp",
+    900
+   ],
+   [
+    "opt/music-growing-sqime.f8c5d643-1200.webp",
+    1200
+   ]
+  ]
+ },
+ "photo-closequarters.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "avif": [
+   [
+    "opt/photo-closequarters.54fac12d-174.avif",
+    174
+   ],
+   [
+    "opt/photo-closequarters.54fac12d-480.avif",
+    480
+   ],
+   [
+    "opt/photo-closequarters.54fac12d-760.avif",
+    760
+   ],
+   [
+    "opt/photo-closequarters.54fac12d-1200.avif",
+    1200
+   ]
+  ],
+  "webp": [
+   [
+    "opt/photo-closequarters.54fac12d-174.webp",
+    174
+   ],
+   [
+    "opt/photo-closequarters.54fac12d-480.webp",
+    480
+   ],
+   [
+    "opt/photo-closequarters.54fac12d-760.webp",
+    760
+   ],
+   [
+    "opt/photo-closequarters.54fac12d-1200.webp",
+    1200
+   ]
+  ]
+ },
+ "jamarama-avatars.png": {
+  "width": 400,
+  "height": 400,
+  "avif": [
+   [
+    "opt/jamarama-avatars.0db7d293-96.avif",
+    96
+   ],
+   [
+    "opt/jamarama-avatars.0db7d293-174.avif",
+    174
+   ]
+  ],
+  "webp": [
+   [
+    "opt/jamarama-avatars.0db7d293-96.webp",
+    96
+   ],
+   [
+    "opt/jamarama-avatars.0db7d293-174.webp",
+    174
+   ]
+  ]
+ },
+ "logo-clockworks.png": {
+  "width": 512,
+  "height": 512,
+  "avif": [
+   [
+    "opt/logo-clockworks.581d08c0-96.avif",
+    96
+   ],
+   [
+    "opt/logo-clockworks.581d08c0-174.avif",
+    174
+   ]
+  ],
+  "webp": [
+   [
+    "opt/logo-clockworks.581d08c0-96.webp",
+    96
+   ],
+   [
+    "opt/logo-clockworks.581d08c0-174.webp",
+    174
+   ]
+  ]
+ },
+ "logo-clubs.png": {
+  "width": 512,
+  "height": 512,
+  "avif": [
+   [
+    "opt/logo-clubs.00e99635-96.avif",
+    96
+   ],
+   [
+    "opt/logo-clubs.00e99635-174.avif",
+    174
+   ]
+  ],
+  "webp": [
+   [
+    "opt/logo-clubs.00e99635-96.webp",
+    96
+   ],
+   [
+    "opt/logo-clubs.00e99635-174.webp",
+    174
+   ]
+  ]
+ },
+ "logo-hearme.png": {
+  "width": 400,
+  "height": 400,
+  "avif": [
+   [
+    "opt/logo-hearme.098d334c-96.avif",
+    96
+   ],
+   [
+    "opt/logo-hearme.098d334c-174.avif",
+    174
+   ]
+  ],
+  "webp": [
+   [
+    "opt/logo-hearme.098d334c-96.webp",
+    96
+   ],
+   [
+    "opt/logo-hearme.098d334c-174.webp",
+    174
+   ]
+  ]
+ },
+ "logo-ircam.png": {
+  "width": 400,
+  "height": 400,
+  "avif": [
+   [
+    "opt/logo-ircam.24ab9d54-96.avif",
+    96
+   ],
+   [
+    "opt/logo-ircam.24ab9d54-174.avif",
+    174
+   ]
+  ],
+  "webp": [
+   [
+    "opt/logo-ircam.24ab9d54-96.webp",
+    96
+   ],
+   [
+    "opt/logo-ircam.24ab9d54-174.webp",
+    174
+   ]
+  ]
+ },
+ "ifeellike-spectrogram.png": {
+  "width": 1200,
+  "height": 320,
+  "avif": [
+   [
+    "opt/ifeellike-spectrogram.ef37d3c7-600.avif",
+    600
+   ],
+   [
+    "opt/ifeellike-spectrogram.ef37d3c7-900.avif",
+    900
+   ],
+   [
+    "opt/ifeellike-spectrogram.ef37d3c7-1200.avif",
+    1200
+   ]
+  ],
+  "webp": [
+   [
+    "opt/ifeellike-spectrogram.ef37d3c7-600.webp",
+    600
+   ],
+   [
+    "opt/ifeellike-spectrogram.ef37d3c7-900.webp",
+    900
+   ],
+   [
+    "opt/ifeellike-spectrogram.ef37d3c7-1200.webp",
+    1200
+   ]
+  ]
+ },
+ "clubs-store-1-deck.jpg": {
+  "width": 620,
+  "height": 1348,
+  "avif": [
+   [
+    "opt/clubs-store-1-deck.324b5a60-310.avif",
+    310
+   ],
+   [
+    "opt/clubs-store-1-deck.324b5a60-465.avif",
+    465
+   ],
+   [
+    "opt/clubs-store-1-deck.324b5a60-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/clubs-store-1-deck.324b5a60-310.webp",
+    310
+   ],
+   [
+    "opt/clubs-store-1-deck.324b5a60-465.webp",
+    465
+   ],
+   [
+    "opt/clubs-store-1-deck.324b5a60-620.webp",
+    620
+   ]
+  ]
+ },
+ "clubs-store-2-create.jpg": {
+  "width": 620,
+  "height": 1348,
+  "avif": [
+   [
+    "opt/clubs-store-2-create.75ebfc1f-310.avif",
+    310
+   ],
+   [
+    "opt/clubs-store-2-create.75ebfc1f-465.avif",
+    465
+   ],
+   [
+    "opt/clubs-store-2-create.75ebfc1f-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/clubs-store-2-create.75ebfc1f-310.webp",
+    310
+   ],
+   [
+    "opt/clubs-store-2-create.75ebfc1f-465.webp",
+    465
+   ],
+   [
+    "opt/clubs-store-2-create.75ebfc1f-620.webp",
+    620
+   ]
+  ]
+ },
+ "clubs-store-3-find.jpg": {
+  "width": 620,
+  "height": 1348,
+  "avif": [
+   [
+    "opt/clubs-store-3-find.8d9d8b93-310.avif",
+    310
+   ],
+   [
+    "opt/clubs-store-3-find.8d9d8b93-465.avif",
+    465
+   ],
+   [
+    "opt/clubs-store-3-find.8d9d8b93-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/clubs-store-3-find.8d9d8b93-310.webp",
+    310
+   ],
+   [
+    "opt/clubs-store-3-find.8d9d8b93-465.webp",
+    465
+   ],
+   [
+    "opt/clubs-store-3-find.8d9d8b93-620.webp",
+    620
+   ]
+  ]
+ },
+ "clubs-store-4-explore.jpg": {
+  "width": 620,
+  "height": 1348,
+  "avif": [
+   [
+    "opt/clubs-store-4-explore.9ab1bdb7-310.avif",
+    310
+   ],
+   [
+    "opt/clubs-store-4-explore.9ab1bdb7-465.avif",
+    465
+   ],
+   [
+    "opt/clubs-store-4-explore.9ab1bdb7-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/clubs-store-4-explore.9ab1bdb7-310.webp",
+    310
+   ],
+   [
+    "opt/clubs-store-4-explore.9ab1bdb7-465.webp",
+    465
+   ],
+   [
+    "opt/clubs-store-4-explore.9ab1bdb7-620.webp",
+    620
+   ]
+  ]
+ },
+ "clubs-store-5-listen.jpg": {
+  "width": 620,
+  "height": 1348,
+  "avif": [
+   [
+    "opt/clubs-store-5-listen.bb380e41-310.avif",
+    310
+   ],
+   [
+    "opt/clubs-store-5-listen.bb380e41-465.avif",
+    465
+   ],
+   [
+    "opt/clubs-store-5-listen.bb380e41-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/clubs-store-5-listen.bb380e41-310.webp",
+    310
+   ],
+   [
+    "opt/clubs-store-5-listen.bb380e41-465.webp",
+    465
+   ],
+   [
+    "opt/clubs-store-5-listen.bb380e41-620.webp",
+    620
+   ]
+  ]
+ },
+ "clubs-store-6-meet.jpg": {
+  "width": 620,
+  "height": 1348,
+  "avif": [
+   [
+    "opt/clubs-store-6-meet.d0b65cda-310.avif",
+    310
+   ],
+   [
+    "opt/clubs-store-6-meet.d0b65cda-465.avif",
+    465
+   ],
+   [
+    "opt/clubs-store-6-meet.d0b65cda-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/clubs-store-6-meet.d0b65cda-310.webp",
+    310
+   ],
+   [
+    "opt/clubs-store-6-meet.d0b65cda-465.webp",
+    465
+   ],
+   [
+    "opt/clubs-store-6-meet.d0b65cda-620.webp",
+    620
+   ]
+  ]
+ },
+ "clubs-store-7-build.jpg": {
+  "width": 620,
+  "height": 1348,
+  "avif": [
+   [
+    "opt/clubs-store-7-build.2337cfcb-310.avif",
+    310
+   ],
+   [
+    "opt/clubs-store-7-build.2337cfcb-465.avif",
+    465
+   ],
+   [
+    "opt/clubs-store-7-build.2337cfcb-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/clubs-store-7-build.2337cfcb-310.webp",
+    310
+   ],
+   [
+    "opt/clubs-store-7-build.2337cfcb-465.webp",
+    465
+   ],
+   [
+    "opt/clubs-store-7-build.2337cfcb-620.webp",
+    620
+   ]
+  ]
+ },
+ "clubs-store-8-launch.jpg": {
+  "width": 620,
+  "height": 1348,
+  "avif": [
+   [
+    "opt/clubs-store-8-launch.1ab00f3c-310.avif",
+    310
+   ],
+   [
+    "opt/clubs-store-8-launch.1ab00f3c-465.avif",
+    465
+   ],
+   [
+    "opt/clubs-store-8-launch.1ab00f3c-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/clubs-store-8-launch.1ab00f3c-310.webp",
+    310
+   ],
+   [
+    "opt/clubs-store-8-launch.1ab00f3c-465.webp",
+    465
+   ],
+   [
+    "opt/clubs-store-8-launch.1ab00f3c-620.webp",
+    620
+   ]
+  ]
+ },
+ "hearme-02-start-with-anything.jpg": {
+  "width": 620,
+  "height": 1347,
+  "avif": [
+   [
+    "opt/hearme-02-start-with-anything.5acf9304-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/hearme-02-start-with-anything.5acf9304-620.webp",
+    620
+   ]
+  ]
+ },
+ "hearme-03-play-a-melody.jpg": {
+  "width": 620,
+  "height": 1347,
+  "avif": [
+   [
+    "opt/hearme-03-play-a-melody.6a03bcc8-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/hearme-03-play-a-melody.6a03bcc8-620.webp",
+    620
+   ]
+  ]
+ },
+ "hearme-05-lyrics-in-time.jpg": {
+  "width": 620,
+  "height": 1347,
+  "avif": [
+   [
+    "opt/hearme-05-lyrics-in-time.33a0ad79-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/hearme-05-lyrics-in-time.33a0ad79-620.webp",
+    620
+   ]
+  ]
+ },
+ "hearme-07-play-along.jpg": {
+  "width": 620,
+  "height": 1347,
+  "avif": [
+   [
+    "opt/hearme-07-play-along.b98b5ffa-620.avif",
+    620
+   ]
+  ],
+  "webp": [
+   [
+    "opt/hearme-07-play-along.b98b5ffa-620.webp",
+    620
+   ]
+  ]
+ }
+}
