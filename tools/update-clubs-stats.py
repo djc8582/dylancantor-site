@@ -31,17 +31,14 @@ def edit(name, subs):
     p.write_text(t)
 
 edit("clubs.html", [
-    (r'<div class="stat"><b>[\d,]+</b><span>people</span></div>',
-     f'<div class="stat"><b>{f(users)}</b><span>people</span></div>'),
-    (r'<div class="stat"><b>[\d,]+</b><span>joined in 30 days</span></div>',
-     f'<div class="stat"><b>{f(joined30)}</b><span>joined in 30 days</span></div>'),
-    (r'<div class="stat"><b>[\d,]+</b><span>live projects</span></div>',
-     f'<div class="stat"><b>{f(projects)}</b><span>live projects</span></div>'),
-    (r'<div class="stat"><b>[\d,]+</b><span>creators &middot; [\d,]+ schools</span></div>',
-     f'<div class="stat"><b>{f(creators)}</b><span>creators &middot; {schools} schools</span></div>'),
+    (r'data-clubs="users">[\d,]+<', f'data-clubs="users">{f(users)}<'),
+    (r'data-clubs="joined_30d">[\d,]+<', f'data-clubs="joined_30d">{f(joined30)}<'),
+    (r'data-clubs="public_projects">[\d,]+<', f'data-clubs="public_projects">{f(projects)}<'),
+    (r'data-clubs="creators">[\d,]+<', f'data-clubs="creators">{f(creators)}<'),
+    (r'data-clubs="schools">[\d,]+<', f'data-clubs="schools">{schools}<'),
 ])
 edit("index.html", [
-    (r'(what people write about themselves\. )[\d,]+ users\.', rf'\g<1>{f(users)} users.'),
+    (r'data-clubs="users">[\d,]+<', f'data-clubs="users">{f(users)}<'),
 ])
 edit("llms.txt", [
     (r'[\d,]+ people, [\d,]+ live projects, [\d,]+ creators across [\d,]+ schools',
