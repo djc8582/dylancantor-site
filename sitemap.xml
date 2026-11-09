@@ -28,6 +28,30 @@
     <image:image><image:loc>https://dylancantor.com/img/ifeellike-spectrogram.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dylancantor.com/euler/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <image:image><image:loc>https://dylancantor.com/img/logo-euler.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dylancantor.com/euler/privacy/</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://dylancantor.com/biophony/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <image:image><image:loc>https://dylancantor.com/img/logo-biophony.png</image:loc></image:image>
+    <image:image><image:loc>https://dylancantor.com/img/biophony-bullfrog.png</image:loc></image:image>
+    <image:image><image:loc>https://dylancantor.com/img/biophony-green-frog.png</image:loc></image:image>
+    <image:image><image:loc>https://dylancantor.com/img/biophony-cicada.png</image:loc></image:image>
+    <image:image><image:loc>https://dylancantor.com/img/biophony-katydid.png</image:loc></image:image>
+    <image:image><image:loc>https://dylancantor.com/img/biophony-tree-cricket.png</image:loc></image:image>
+    <image:image><image:loc>https://dylancantor.com/img/biophony-field-cricket.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dylancantor.com/biophony/privacy/</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
     <loc>https://dylancantor.com/clockworks</loc>
     <lastmod>2026-11-08</lastmod>
     <image:image><image:loc>https://dylancantor.com/img/logo-clockworks.png</image:loc></image:image>

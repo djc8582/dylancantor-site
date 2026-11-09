@@ -295,6 +295,54 @@
    ]
   ]
  },
+ "logo-euler.png": {
+  "width": 512,
+  "height": 512,
+  "avif": [
+   [
+    "opt/logo-euler.00da9641-96.avif",
+    96
+   ],
+   [
+    "opt/logo-euler.00da9641-174.avif",
+    174
+   ]
+  ],
+  "webp": [
+   [
+    "opt/logo-euler.00da9641-96.webp",
+    96
+   ],
+   [
+    "opt/logo-euler.00da9641-174.webp",
+    174
+   ]
+  ]
+ },
+ "logo-biophony.png": {
+  "width": 512,
+  "height": 512,
+  "avif": [
+   [
+    "opt/logo-biophony.31240822-96.avif",
+    96
+   ],
+   [
+    "opt/logo-biophony.31240822-174.avif",
+    174
+   ]
+  ],
+  "webp": [
+   [
+    "opt/logo-biophony.31240822-96.webp",
+    96
+   ],
+   [
+    "opt/logo-biophony.31240822-174.webp",
+    174
+   ]
+  ]
+ },
  "ifeellike-spectrogram.png": {
   "width": 1200,
   "height": 320,
@@ -644,6 +692,150 @@
    [
     "opt/hearme-07-play-along.b98b5ffa-620.webp",
     620
+   ]
+  ]
+ },
+ "biophony-bullfrog.png": {
+  "width": 256,
+  "height": 256,
+  "avif": [
+   [
+    "opt/biophony-bullfrog.e82cd05e-128.avif",
+    128
+   ],
+   [
+    "opt/biophony-bullfrog.e82cd05e-256.avif",
+    256
+   ]
+  ],
+  "webp": [
+   [
+    "opt/biophony-bullfrog.e82cd05e-128.webp",
+    128
+   ],
+   [
+    "opt/biophony-bullfrog.e82cd05e-256.webp",
+    256
+   ]
+  ]
+ },
+ "biophony-cicada.png": {
+  "width": 256,
+  "height": 256,
+  "avif": [
+   [
+    "opt/biophony-cicada.00bc8d9f-128.avif",
+    128
+   ],
+   [
+    "opt/biophony-cicada.00bc8d9f-256.avif",
+    256
+   ]
+  ],
+  "webp": [
+   [
+    "opt/biophony-cicada.00bc8d9f-128.webp",
+    128
+   ],
+   [
+    "opt/biophony-cicada.00bc8d9f-256.webp",
+    256
+   ]
+  ]
+ },
+ "biophony-field-cricket.png": {
+  "width": 256,
+  "height": 256,
+  "avif": [
+   [
+    "opt/biophony-field-cricket.2c0f531a-128.avif",
+    128
+   ],
+   [
+    "opt/biophony-field-cricket.2c0f531a-256.avif",
+    256
+   ]
+  ],
+  "webp": [
+   [
+    "opt/biophony-field-cricket.2c0f531a-128.webp",
+    128
+   ],
+   [
+    "opt/biophony-field-cricket.2c0f531a-256.webp",
+    256
+   ]
+  ]
+ },
+ "biophony-green-frog.png": {
+  "width": 256,
+  "height": 256,
+  "avif": [
+   [
+    "opt/biophony-green-frog.0bd84e61-128.avif",
+    128
+   ],
+   [
+    "opt/biophony-green-frog.0bd84e61-256.avif",
+    256
+   ]
+  ],
+  "webp": [
+   [
+    "opt/biophony-green-frog.0bd84e61-128.webp",
+    128
+   ],
+   [
+    "opt/biophony-green-frog.0bd84e61-256.webp",
+    256
+   ]
+  ]
+ },
+ "biophony-katydid.png": {
+  "width": 256,
+  "height": 256,
+  "avif": [
+   [
+    "opt/biophony-katydid.bb1846ad-128.avif",
+    128
+   ],
+   [
+    "opt/biophony-katydid.bb1846ad-256.avif",
+    256
+   ]
+  ],
+  "webp": [
+   [
+    "opt/biophony-katydid.bb1846ad-128.webp",
+    128
+   ],
+   [
+    "opt/biophony-katydid.bb1846ad-256.webp",
+    256
+   ]
+  ]
+ },
+ "biophony-tree-cricket.png": {
+  "width": 256,
+  "height": 256,
+  "avif": [
+   [
+    "opt/biophony-tree-cricket.94855e96-128.avif",
+    128
+   ],
+   [
+    "opt/biophony-tree-cricket.94855e96-256.avif",
+    256
+   ]
+  ],
+  "webp": [
+   [
+    "opt/biophony-tree-cricket.94855e96-128.webp",
+    128
+   ],
+   [
+    "opt/biophony-tree-cricket.94855e96-256.webp",
+    256
    ]
   ]
  }

@@ -22,10 +22,14 @@ const SPEC = {
   "logo-clubs.png":             { w: [96, 174], ui: true },
   "logo-hearme.png":            { w: [96, 174], ui: true },
   "logo-ircam.png":             { w: [96, 174], ui: true },
+  "logo-euler.png":             { w: [96, 174], ui: true },
+  "logo-biophony.png":          { w: [96, 174], ui: true },
   "ifeellike-spectrogram.png":  { w: [600, 900, 1200], ui: true, q: 60 },
 };
 for (const f of readdirSync("img")) if (/^clubs-store-/.test(f)) SPEC[f] = { w: [310, 465, 620], ui: true };
 for (const f of readdirSync("img")) if (/^hearme-0[2357]/.test(f)) SPEC[f] = { w: [620], ui: true };
+// Biophony creatures: frame 0 (idle) of each 4x4 sprite sheet, 256x256 with alpha.
+for (const f of readdirSync("img")) if (/^biophony-/.test(f)) SPEC[f] = { w: [128, 256], ui: true };
 
 mkdirSync("opt", { recursive: true });
 for (const f of readdirSync("opt")) rmSync("opt/" + f);
