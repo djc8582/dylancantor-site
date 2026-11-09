@@ -1,0 +1,36 @@
+# Cloudflare Pages response headers. Pages compresses text (brotli/gzip) and
+# serves byte ranges on its own; this file only sets caching and a few
+# security headers. Rules must not overlap on Cache-Control: when two rules
+# match a path Pages joins their values, so each asset folder has exactly one.
+#
+# HTML, PDFs (CV), robots/sitemap/llms.txt keep the Pages default
+# (max-age=0, must-revalidate + ETag): edits show up on the next visit.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Content-hashed file names (tools/make-images.mjs, /fonts/*.<hash>.woff2):
+# a changed file gets a new name, so these can be cached for a year.
+/opt/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# Originals: the <img> fallbacks and the og:image / JSON-LD images. Not
+# hashed, so cache for a week and revalidate in the background after that.
+/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+# Referenced as style.css?vNN / player.js?vNN. Bump the number when either
+# changes; the short max-age covers a forgotten bump.
+/style.css
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+/player.js
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Large mp3s, fetched with range requests only once play is pressed. A day,
+# since a new master may replace a file under the same name.
+/audio/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

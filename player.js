@@ -1,7 +1,11 @@
 /* Sticky listening bar.
    EDUCATION is six files but one 49:17 timeline: the scrubber spans the whole
    album and seeking crosses file boundaries. It rolls into "I Feel Like" at the
-   end. "I Feel Like" on its own does not advance to anything. */
+   end. "I Feel Like" on its own does not advance to anything.
+   Nothing is downloaded until someone presses play: the <audio> element gets
+   its src lazily (preload="none"), and the bar's times come from the measured
+   lengths below, so an idle page costs no audio bytes. Playback then streams
+   with HTTP range requests. */
 (function () {
   /* measured durations of the six EDUCATION parts, in order */
   var ALBUM_LEN = [899.866, 860.160, 163.239, 261.669, 460.617, 311.719];
@@ -16,7 +20,7 @@
     { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "audio/education-4.mp3", album: true },
     { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "audio/education-5.mp3", album: true },
     { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "audio/education-6.mp3", album: true },
-    { title: "I Feel Like", artist: "IRCAM — binaural mix", src: "audio/ifeellike-binaural.mp3" }
+    { title: "I Feel Like", artist: "IRCAM — binaural mix", src: "audio/ifeellike-binaural.mp3", len: 253.128 }
   ];
 
   var RELEASES = [
@@ -37,13 +41,14 @@
     if (saved && typeof saved.i === "number" && TRACKS[saved.i]) state = saved;
   } catch (e) {}
 
-  var pendingSeek = null, pendingPlay = false;
+  var pendingSeek = null;   /* position (s, within the current file) to apply once it is loaded */
+  var loaded = null;        /* the src actually assigned to the <audio> element */
 
   function isAlbum(i) { return !!(TRACKS[i] && TRACKS[i].album); }
 
   function save() {
     try {
-      sessionStorage.setItem(KEY, JSON.stringify({ i: state.i, t: audio.currentTime || 0, playing: !audio.paused }));
+      sessionStorage.setItem(KEY, JSON.stringify({ i: state.i, t: curT(), playing: !audio.paused }));
     } catch (e) {}
   }
 
@@ -53,14 +58,37 @@
     return m + ":" + (r < 10 ? "0" : "") + r;
   }
 
+  function isLoaded() { return loaded !== null && loaded === TRACKS[state.i].src; }
+  /* position within the current file, whether or not it has been fetched yet */
+  function curT() {
+    if (isLoaded() && pendingSeek === null) return audio.currentTime || 0;
+    return pendingSeek !== null ? pendingSeek : 0;
+  }
   /* position on the timeline the bar is showing */
   function nowPos() {
-    var t = audio.currentTime || 0;
+    var t = curT();
     return isAlbum(state.i) ? ALBUM_OFF[state.i] + t : t;
   }
   function fullLen() {
     if (isAlbum(state.i)) return ALBUM_TOTAL;
-    return isFinite(audio.duration) ? audio.duration : 0;
+    if (isLoaded() && isFinite(audio.duration)) return audio.duration;
+    return TRACKS[state.i].len || 0;
+  }
+  /* give the <audio> element the current track, only when it is about to play */
+  function ensureSrc() {
+    var src = TRACKS[state.i].src;
+    if (loaded !== src) { loaded = src; audio.src = src; }
+    else applySeek();
+  }
+  function applySeek() {
+    if (pendingSeek === null || !isLoaded() || audio.readyState < 1) return;
+    audio.currentTime = Math.max(0, Math.min(pendingSeek, audio.duration - 0.25));
+    pendingSeek = null;
+  }
+  function startPlay() {
+    panel.hidden = true; embed.innerHTML = "";
+    ensureSrc();
+    return audio.play().catch(function () { setIcon(false); });
   }
   function partAt(pos) {
     for (var k = ALBUM_N - 1; k >= 0; k--) if (pos >= ALBUM_OFF[k]) return k;
@@ -72,7 +100,7 @@
   bar.innerHTML =
     '<div class="pl-panel" hidden>' +
       '<div class="pl-panel-head"><b class="pl-panel-title"></b>' +
-      '<button type="button" class="pl-close" aria-label="Close">&times;</button></div>' +
+      '<button type="button" class="pl-close" aria-label="Close Spotify player">&times;</button></div>' +
       '<div class="pl-embed"></div>' +
     '</div>' +
     '<div class="player-inner">' +
@@ -85,7 +113,7 @@
       '<div class="pl-meta"><b class="pl-title"></b><span class="pl-artist"></span></div>' +
       '<div class="pl-seekwrap">' +
         '<span class="pl-time pl-cur">0:00</span>' +
-        '<input class="pl-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek">' +
+        '<input class="pl-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek" aria-valuetext="0:00">' +
         '<span class="pl-time pl-dur">0:00</span>' +
       '</div>' +
       '<button class="pl-btn pl-list" type="button" aria-label="Tracks and releases" aria-expanded="false">' +
@@ -93,8 +121,8 @@
       '</button>' +
       '<div class="pl-menu" hidden>' +
         '<div class="pl-tabs">' +
-          '<button type="button" class="pl-tab on" data-tab="here">On this site</button>' +
-          '<button type="button" class="pl-tab" data-tab="spotify">Releases</button>' +
+          '<button type="button" class="pl-tab on" data-tab="here" aria-pressed="true">On this site</button>' +
+          '<button type="button" class="pl-tab" data-tab="spotify" aria-pressed="false">Releases</button>' +
         '</div>' +
         '<ul class="pl-pane pl-pane-here"></ul>' +
         '<ul class="pl-pane pl-pane-spotify" hidden></ul>' +
@@ -102,7 +130,7 @@
     '</div>';
 
   var audio = new Audio();
-  audio.preload = "metadata";
+  audio.preload = "none";
 
   var q = function (s) { return bar.querySelector(s); };
   var elPlay = q(".pl-play"), elNext = q(".pl-next"),
@@ -131,7 +159,10 @@
 
   Array.prototype.forEach.call(bar.querySelectorAll(".pl-tab"), function (b) {
     b.addEventListener("click", function () {
-      Array.prototype.forEach.call(bar.querySelectorAll(".pl-tab"), function (x) { x.classList.toggle("on", x === b); });
+      Array.prototype.forEach.call(bar.querySelectorAll(".pl-tab"), function (x) {
+        x.classList.toggle("on", x === b);
+        x.setAttribute("aria-pressed", String(x === b));
+      });
       paneHere.hidden = b.dataset.tab !== "here";
       paneSpot.hidden = b.dataset.tab !== "spotify";
     });
@@ -140,13 +171,14 @@
   function openEmbed(r) {
     audio.pause();
     panelTitle.textContent = r.name;
-    embed.innerHTML = '<iframe style="border-radius:8px" src="https://open.spotify.com/embed/artist/' + r.id +
+    embed.innerHTML = '<iframe title="Spotify player: ' + r.name + '" style="border-radius:8px" src="https://open.spotify.com/embed/artist/' + r.id +
       '?utm_source=generator" width="100%" height="152" frameborder="0" loading="lazy" ' +
       'allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
     panel.hidden = false;
     closeMenu();
+    q(".pl-close").focus();
   }
-  q(".pl-close").addEventListener("click", function () { panel.hidden = true; embed.innerHTML = ""; });
+  q(".pl-close").addEventListener("click", function () { panel.hidden = true; embed.innerHTML = ""; elList.focus(); });
 
   function markMenu() {
     Array.prototype.forEach.call(paneHere.children, function (li) {
@@ -158,14 +190,14 @@
   function load(i, play, seekWithin) {
     state.i = ((i % TRACKS.length) + TRACKS.length) % TRACKS.length;
     var t = TRACKS[state.i];
-    audio.src = t.src;
+    if (!audio.paused) audio.pause();
     elTitle.textContent = t.title;
     elArtist.textContent = t.artist;
     pendingSeek = (typeof seekWithin === "number") ? seekWithin : null;
     paint();
     markMenu();
     save();
-    if (play) { panel.hidden = true; embed.innerHTML = ""; audio.play().catch(function () { setIcon(false); }); }
+    if (play) startPlay();
   }
 
   function setIcon(playing) {
@@ -177,11 +209,14 @@
     var len = fullLen(), pos = nowPos();
     elDur.textContent = len ? fmt(len) : "0:00";
     elCur.textContent = fmt(pos);
-    if (!seeking) elSeek.value = len ? Math.round(pos / len * 1000) : 0;
+    if (!seeking) {
+      elSeek.value = len ? Math.round(pos / len * 1000) : 0;
+      elSeek.setAttribute("aria-valuetext", fmt(pos) + " of " + fmt(len));
+    }
   }
 
   elPlay.addEventListener("click", function () {
-    if (audio.paused) { panel.hidden = true; embed.innerHTML = ""; audio.play().catch(function () {}); }
+    if (audio.paused) startPlay();
     else audio.pause();
   });
   elNext.addEventListener("click", function () {
@@ -189,7 +224,11 @@
     load(isAlbum(state.i) ? ALBUM_N : 0, true);
   });
 
-  function closeMenu() { elMenu.hidden = true; elList.setAttribute("aria-expanded", "false"); }
+  function closeMenu() {
+    var hadFocus = elMenu.contains(document.activeElement);
+    elMenu.hidden = true; elList.setAttribute("aria-expanded", "false");
+    if (hadFocus) elList.focus();
+  }
   elList.addEventListener("click", function (e) {
     e.stopPropagation();
     var open = elMenu.hidden;
@@ -197,7 +236,7 @@
     elList.setAttribute("aria-expanded", String(open));
   });
   document.addEventListener("click", function (e) { if (!bar.contains(e.target)) closeMenu(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !elMenu.hidden) closeMenu(); });
 
   var seeking = false;
   elSeek.addEventListener("input", function () {
@@ -209,22 +248,22 @@
     seeking = false;
     if (isAlbum(state.i)) {
       var j = partAt(target), within = target - ALBUM_OFF[j];
-      if (j === state.i) { audio.currentTime = Math.min(within, (audio.duration || within)); }
+      if (j === state.i) seekWithin(within);
       else { load(j, !audio.paused, within); }
-    } else if (isFinite(audio.duration)) {
-      audio.currentTime = target;
+    } else {
+      seekWithin(target);
     }
     paint();
     save();
   });
 
+  function seekWithin(t) {
+    if (isLoaded() && audio.readyState >= 1) audio.currentTime = Math.min(t, audio.duration || t);
+    else pendingSeek = t;
+  }
+
   audio.addEventListener("loadedmetadata", function () {
-    if (pendingSeek !== null) {
-      audio.currentTime = Math.max(0, Math.min(pendingSeek, audio.duration - 0.25));
-      pendingSeek = null;
-    } else if (state.t > 0 && state.t < audio.duration) {
-      audio.currentTime = state.t; state.t = 0;
-    }
+    applySeek();
     paint();
   });
   audio.addEventListener("timeupdate", function () { if (!seeking) paint(); });
@@ -250,7 +289,7 @@
       }
       if (typeof i !== "number") i = state.i;
       if (i === state.i || (isAlbum(i) && isAlbum(state.i))) {
-        if (audio.paused) { panel.hidden = true; audio.play().catch(function () {}); } else audio.pause();
+        if (audio.paused) startPlay(); else audio.pause();
         return;
       }
       load(i, true);
@@ -260,8 +299,8 @@
   function mount() {
     document.body.appendChild(bar);
     document.body.classList.add("has-player");
-    load(state.i, false);
-    if (state.playing) audio.play().catch(function () { setIcon(false); });
+    load(state.i, false, state.t > 0 ? state.t : undefined);
+    if (state.playing) startPlay();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mount);
   else mount();
