@@ -14,12 +14,12 @@
   var ALBUM_N = ALBUM_LEN.length;
 
   var TRACKS = [
-    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "/audio/education-1.mp3", album: true },
-    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "/audio/education-2.mp3", album: true },
-    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "/audio/education-3.mp3", album: true },
-    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "/audio/education-4.mp3", album: true },
-    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "/audio/education-5.mp3", album: true },
-    { title: "EDUCATION", artist: "Psychedelic rock · continuous", src: "/audio/education-6.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock", src: "/audio/education-1.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock", src: "/audio/education-2.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock", src: "/audio/education-3.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock", src: "/audio/education-4.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock", src: "/audio/education-5.mp3", album: true },
+    { title: "EDUCATION", artist: "Psychedelic rock", src: "/audio/education-6.mp3", album: true },
     { title: "I Feel Like", artist: "IRCAM — binaural mix", src: "/audio/ifeellike-binaural.mp3", len: 253.128 }
   ];
 
