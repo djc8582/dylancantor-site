@@ -1,0 +1,134 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,margin=0.62in,top=0.55in,bottom=0.6in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\small Cantor \thepage/\pageref{LastPage}}
+\fancypagestyle{first}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+
+\setlength{\parindent}{0pt}
+\hyphenpenalty=10000 \exhyphenpenalty=10000
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing*{\section}{0pt}{11pt}{5pt}
+\setlist[itemize]{label=--,leftmargin=12pt,itemsep=1.5pt,topsep=2pt,parsep=0pt}
+
+% \entry{left bold}{right}{left italic}{right italic}
+% The right column is a fixed-width box, so dates and GPA can never run off the page.
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X@{\hspace{8pt}}r@{}}
+    \textbf{#1} & #2 \\
+    \ifx\relax#3\relax\else \textit{#3} & \textit{#4} \\ \fi
+  \end{tabularx}\vspace{1pt}}
+
+\begin{document}
+\thispagestyle{first}
+
+\begin{center}
+  {\LARGE\bfseries Dylan Cantor}\\[5pt]
+  Brooklyn, NY \enspace$\cdot$\enspace (610) 716-6913 \enspace$\cdot$\enspace
+  \href{mailto:cantor.dylan@gmail.com}{cantor.dylan@gmail.com}\\[2pt]
+  \href{https://dylancantor.com}{dylancantor.com} \enspace$\cdot$\enspace
+  \href{https://www.linkedin.com/in/dylan-cantor-909b77352/}{linkedin.com/in/dylan-cantor-909b77352} \enspace$\cdot$\enspace
+  \href{https://github.com/djc8582}{github.com/djc8582}
+\end{center}
+
+\section{Education}
+\entry{New York University}{Expected May 2027}
+  {Double major in Music Technology (Steinhardt) and Computer Science (CAS); Minor, Mathematics}{GPA 3.69}
+\entry{NYU Paris --- IRCAM program}{Spring 2026}
+  {Spatial audio at IRCAM, one day weekly: ambisonics, directivity, binaural rendering}{Paris, France}
+\textbf{Relevant coursework.} Digital Signal Processing; Operating Systems; Artificial Intelligence; Algorithms;
+Linear Algebra; Probability \& Statistics; Analog \& Digital Electronics with labs; Analog \& Digital Recording;
+Electronic \& Computer Music Synthesis; MIDI Technology II (Max/MSP).
+
+\section{Research Experience}
+\entry{Research Team Member --- Georgia Tech Center for Music Technology}{May 2026 -- Present}
+  {Prof.\ Gil Weinberg's research group}{Atlanta, GA (remote)}
+\begin{itemize}
+  \item Sole engineer on the iOS client for HearMe, a shipped application that generates a full arrangement
+  from a musician's own playing, returning separable stems, chords, and time-aligned lyrics.
+  \item Built a Web-Audio-style playback engine in React Native with sample-accurate scheduling for the
+  piano and drum interfaces, and offline MIDI rendering of generated results.
+  \item Implemented the full input path --- recording, upload, keyboard capture, lyric entry --- into the
+  generation service, with a background watcher that survives app suspension.
+  \item Built the result surface: one transport synchronized across stems, chords, lyrics, and play-along mode,
+  with per-project version history. 200+ commits. Joined for a 150-hour summer term and have remained
+  on the team since, meeting weekly with the group and separately with Prof.\ Weinberg.
+\end{itemize}
+
+\section{Professional Experience}
+\entry{Cofounder and Sole Engineer --- Clubs}{February 2026 -- Present}
+  {Creative-collaboration platform, live on the iOS App Store}{Brooklyn, NY}
+\begin{itemize}
+  \item Built and shipped a platform where projects are posted as cards, discovered by swiping, and applied to;
+  accepted collaborators work in real-time channels. 1,976 users and 311 active public projects from
+  213 creators across 49 schools, with 24,829 swipes, 3,596 applications and 2,262 messages in the last 30 days.
+  \item Designed the AI pipelines: free-text self-descriptions parsed into interests and skills, content
+  moderation, automatic project tagging, semantic search, and an email path that publishes a forwarded
+  message as a card.
+  \item Built a personalized discovery feed on a sawtooth-staircase ranking algorithm, batched and preloaded in
+  the background so the first card paints instantly, plus real-time group and direct messaging with unread
+  tracking, push notifications and universal deep links.
+  \item Sole engineer across a multi-package monorepo spanning the iOS client, backend, admin console and
+  marketing site; 2,300+ commits. Covered in the
+  \href{https://nyunews.com}{\textit{Washington Square News}}. Cofounded with Nick Benak, who leads design and marketing.
+\end{itemize}
+
+\section{Projects}
+\entry{Jamarama --- real-time multiplayer jam system; Winner, Audiotool Challenge}{June 2026}{}{}
+\begin{itemize}
+  \item Led the audio architecture at the Google DeepMind Magenta hackathon, with Sai Nellutla. Two to four
+  players each control one dimension of a single fused track from their phones, and one player's chord
+  change re-roots the whole band on the next downbeat.
+  \item Placed the master clock in the host browser, fanning beats over WebSocket to phones acting as thin
+  controllers; the lead keyboard fires a local tone in under 20\,ms so playing never waits on the network.
+  \item Measured the generative model for tempo stability, found it drifts within roughly 30 seconds with
+  no tempo input, and removed it from the clock entirely --- a deterministic clock-locked band wrapped in
+  an arhythmic texture layer that floats off the grid, where drift is inaudible.
+  \item Ran that layer as Magenta RealTime 2 on-device via MLX at $\sim$2.37$\times$ real-time, conditioned on
+  blended player taste, live chord, and crowd energy. Tone.js, WebSocket, Node, Python, MLX.
+\end{itemize}
+\entry{``I Feel Like'' --- second-order ambisonic production and binaural mix}{Spring 2026}{}{}
+\begin{itemize}
+  \item Produced a multitrack piece entirely in the ambisonic domain at IRCAM: about forty sources
+  individually encoded into a second-order field and positioned by azimuth and elevation rather than panned.
+  \item Ran room encoding, directivity shaping and a feedback-delay-network reverb inside the ambisonic
+  domain rather than on a stereo bus, then decoded the same scene two ways --- loudspeaker array by
+  all-round ambisonic decoding, headphones by binaural decoding.
+  \item Recorded all source material: field recordings on omnidirectional capsules, instruments from the
+  Baschet brothers' \textit{Structures Sonores} sound sculptures, and tetrahedral-microphone material
+  converted A-format to B-format before encoding. Reaper, IEM Plug-in Suite, Sennheiser AMBEO.
+\end{itemize}
+
+\section{Creative and Performance Work}
+\entry{Growing Sqime --- character-based act with Miller Fishback, on Cooking Pot}{2022 -- Present}{}{}
+\begin{itemize}
+  \item Each alias is a character with its own register, letting the project move between rap, avant-garde
+  jazz-rock and electronic music. Seven names on Spotify and Bandcamp, including \textit{rat's nest} (2024).
+  \item Roughly 990,000 Spotify streams across the catalogue, including a 650,000-stream collaboration and
+  released work with Open Mike Eagle, Quelle Chris and Denmark Vessey.
+\end{itemize}
+\entry{Close Quarters --- band with Nick Benak, on Cooking Pot}{Present}{}{}
+\begin{itemize}
+  \item \textit{EDUCATION}, a 49-minute continuous psychedelic rock concept album about going through school at
+  NYU. Written, recorded and produced together.
+\end{itemize}
+
+\section{Technical Skills}
+\textbf{Audio and DSP:} Max/MSP, RNBO, Web Audio API, JUCE, ambisonics and binaural rendering,
+real-time and streaming audio, sample-accurate scheduling\\
+\textbf{Machine learning:} generative audio, music information retrieval, on-device inference (MLX)\\
+\textbf{Languages and frameworks:} Python, TypeScript, Swift, C++; React Native, Node, Supabase\\
+\textbf{Tools:} Git, Reaper, Ableton Live, Logic Pro, IEM Plug-in Suite
+
+\end{document}
