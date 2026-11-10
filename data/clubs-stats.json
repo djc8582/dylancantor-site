@@ -1,25 +1,25 @@
 {
  "users": {
-  "total": 1987,
-  "onboarded": 1797,
-  "signups_7d": 432,
-  "signups_30d": 1020,
+  "total": 2008,
+  "onboarded": 1813,
+  "signups_7d": 340,
+  "signups_30d": 1021,
   "with_school": 234,
   "schools_total": 49
  },
  "projects": {
-  "new_30d": 137,
-  "public_active": 312,
-  "distinct_creators": 214
+  "new_30d": 139,
+  "public_active": 316,
+  "distinct_creators": 217
  },
  "activity": {
-  "dau_7d_avg": 70,
-  "swipes_30d": 25034,
-  "messages_30d": 2327,
-  "applications_30d": 3696
+  "dau_7d_avg": 57,
+  "swipes_30d": 25647,
+  "messages_30d": 2500,
+  "applications_30d": 3727
  },
  "caveats": [
   "project counts exclude the seeded school import and school-only listings"
  ],
- "generated_at": "2026-11-09T07:27:09.063719+00:00"
+ "generated_at": "2026-11-10T07:27:03.200627+00:00"
 }
