@@ -3,7 +3,7 @@
 > Dylan Cantor is a software engineer who builds real-time and collaborative music systems. He is a double major in Computer Science (CAS) and Music Technology (B.M., Steinhardt) at New York University (NYU), with a minor in Mathematics, graduating May 2027. He works on Gil Weinberg's research team at the Georgia Tech Center for Music Technology, where he builds the iOS client for HearMe; studied spatial audio at IRCAM, Paris in spring 2026 through NYU's program there; and cofounded Clubs, a creative collaboration app live on the App Store. Based in Brooklyn, New York.
 
 - Interests: real-time audio DSP, on-device inference, spatial audio, music information retrieval, interactive performance systems.
-- Coursework: digital signal processing, operating systems, probability and statistics, artificial intelligence, analog and digital electronics, algorithms, electronic music synthesis, Max/MSP.
+- Coursework: digital signal processing, operating systems, probability and statistics, artificial intelligence, analog and digital electronics, basic algorithms, electronic music synthesis, Max/MSP.
 - Award: Winner, Audiotool Challenge, Google DeepMind Magenta Hackathon (June 2026), for Jamarama.
 - Press: [NYU student-founders talk app-based solution to creative collaboration](https://nyunews.com/culture/2026/11/05/clubs-app-student-founders/), Washington Square News, 5 November 2026 (about Clubs, with Nick Benak).
 - Contact: cantor.dylan@gmail.com
