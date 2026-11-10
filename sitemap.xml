@@ -78,4 +78,13 @@
     <loc>https://dylancantor.com/Cantor_I-Feel-Like_IRCAM.pdf</loc>
     <lastmod>2026-11-08</lastmod>
   </url>
+  <url>
+    <loc>https://dylancantor.com/signal-zoo/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <image:image><image:loc>https://dylancantor.com/img/logo-signal-zoo.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dylancantor.com/signal-zoo/privacy/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
 </urlset>
