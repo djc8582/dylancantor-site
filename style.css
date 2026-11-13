@@ -224,6 +224,16 @@ button.playcue:hover{background:var(--accent);color:#fff}
 .playcue-ico{font-size:9px;line-height:1}
 .cue-note{font-size:11px;color:var(--ink-3);letter-spacing:.04em;line-height:1.6;max-width:42ch}
 
+a.listencue{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:8px 17px;
+  font-size:14px;font-weight:600;letter-spacing:-.01em;color:var(--ink);
+  border:1px solid var(--rule);transition:border-color .14s ease,color .14s ease}
+a.listencue:hover{border-color:var(--accent);color:var(--accent)}
+a.listencue i{font-style:normal;font-size:12px}
+.body-copy p.services,p.services{display:flex;flex-wrap:wrap;gap:6px 16px;margin:-8px 0 26px;font-family:"JetBrains Mono",monospace;
+  font-size:11.5px;letter-spacing:.04em}
+p.services a{color:var(--ink-3);border-bottom:1px solid var(--rule-soft)}
+p.services a:hover{color:var(--accent);border-color:var(--accent)}
+
 /* ---------- project pages ---------- */
 .proj-head{padding-block:58px 34px;border-bottom:1px solid var(--rule)}
 .meta{display:flex;flex-direction:column;gap:7px;font-size:11.5px;color:var(--ink-3);
