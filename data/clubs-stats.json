@@ -1,25 +1,220 @@
 {
  "users": {
-  "total": 2066,
-  "onboarded": 1860,
-  "signups_7d": 259,
-  "signups_30d": 1024,
-  "with_school": 237,
-  "schools_total": 49
+  "total": 2095,
+  "age_dist": {
+   "18_21": 598,
+   "22_25": 463,
+   "26_30": 365,
+   "31_plus": 543
+  },
+  "onboarded": 1883,
+  "signups_7d": 244,
+  "signups_30d": 1032,
+  "top_schools": [
+   {
+    "users": 170,
+    "school": "NYU"
+   },
+   {
+    "users": 7,
+    "school": "Student"
+   },
+   {
+    "users": 6,
+    "school": "Fordham"
+   },
+   {
+    "users": 3,
+    "school": "Pratt"
+   },
+   {
+    "users": 2,
+    "school": "Pace"
+   },
+   {
+    "users": 2,
+    "school": "Emerson"
+   },
+   {
+    "users": 2,
+    "school": "Students"
+   },
+   {
+    "users": 2,
+    "school": "SVA"
+   },
+   {
+    "users": 2,
+    "school": "The New School"
+   },
+   {
+    "users": 2,
+    "school": "USC"
+   },
+   {
+    "users": 2,
+    "school": "U"
+   },
+   {
+    "users": 2,
+    "school": "Login"
+   },
+   {
+    "users": 1,
+    "school": "Brown"
+   },
+   {
+    "users": 1,
+    "school": "Temple"
+   },
+   {
+    "users": 1,
+    "school": "Berklee"
+   }
+  ],
+  "with_school": 238,
+  "schools_total": 50,
+  "signups_by_month": [
+   {
+    "count": 71,
+    "month": "2026-04"
+   },
+   {
+    "count": 56,
+    "month": "2026-05"
+   },
+   {
+    "count": 92,
+    "month": "2026-06"
+   },
+   {
+    "count": 122,
+    "month": "2026-07"
+   },
+   {
+    "count": 289,
+    "month": "2026-08"
+   },
+   {
+    "count": 231,
+    "month": "2026-09"
+   },
+   {
+    "count": 674,
+    "month": "2026-10"
+   },
+   {
+    "count": 560,
+    "month": "2026-11"
+   }
+  ]
+ },
+ "caveats": [
+  "project counts exclude the seeded school import and school-only listings",
+  "instagram numbers are from the nightly Meta sync; follower_total is the latest synced day"
+ ],
+ "activity": {
+  "dau_7d_avg": 43,
+  "swipes_30d": 25432,
+  "messages_30d": 2877,
+  "applications_30d": 3835
  },
  "projects": {
   "new_30d": 145,
-  "public_active": 326,
-  "distinct_creators": 225
+  "top_tags": [
+   {
+    "tag": "film",
+    "count": 47
+   },
+   {
+    "tag": "short film",
+    "count": 33
+   },
+   {
+    "tag": "music",
+    "count": 33
+   },
+   {
+    "tag": "collaboration",
+    "count": 26
+   },
+   {
+    "tag": "writing",
+    "count": 22
+   },
+   {
+    "tag": "actors",
+    "count": 20
+   },
+   {
+    "tag": "discussion",
+    "count": 20
+   },
+   {
+    "tag": "comedy",
+    "count": 18
+   },
+   {
+    "tag": "storytelling",
+    "count": 16
+   },
+   {
+    "tag": "actor",
+    "count": 14
+   },
+   {
+    "tag": "band",
+    "count": 12
+   },
+   {
+    "tag": "crew",
+    "count": 11
+   },
+   {
+    "tag": "performance",
+    "count": 11
+   },
+   {
+    "tag": "writers",
+    "count": 11
+   },
+   {
+    "tag": "acting",
+    "count": 11
+   },
+   {
+    "tag": "documentary",
+    "count": 11
+   },
+   {
+    "tag": "filmmaker",
+    "count": 11
+   },
+   {
+    "tag": "recording",
+    "count": 11
+   },
+   {
+    "tag": "nyc",
+    "count": 10
+   },
+   {
+    "tag": "writer",
+    "count": 10
+   }
+  ],
+  "public_active": 327,
+  "distinct_creators": 226
  },
- "activity": {
-  "dau_7d_avg": 46,
-  "swipes_30d": 25801,
-  "messages_30d": 2785,
-  "applications_30d": 3846
- },
- "caveats": [
-  "project counts exclude the seeded school import and school-only listings"
+ "instagram": [
+  {
+   "username": "clubs.create",
+   "reach_30d": 1729741,
+   "views_30d": 0,
+   "followers_total": 13379,
+   "last_synced_day": "2026-11-13",
+   "profile_views_30d": 0
+  }
  ],
- "generated_at": "2026-11-12T07:23:49.692399+00:00"
+ "generated_at": "2026-11-13T07:24:16.464152+00:00"
 }
