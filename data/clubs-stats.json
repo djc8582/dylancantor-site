@@ -1,15 +1,15 @@
 {
  "users": {
-  "total": 2095,
+  "total": 2115,
   "age_dist": {
    "18_21": 598,
-   "22_25": 463,
-   "26_30": 365,
-   "31_plus": 543
+   "22_25": 468,
+   "26_30": 368,
+   "31_plus": 552
   },
-  "onboarded": 1883,
-  "signups_7d": 244,
-  "signups_30d": 1032,
+  "onboarded": 1900,
+  "signups_7d": 225,
+  "signups_30d": 1038,
   "top_schools": [
    {
     "users": 170,
@@ -29,7 +29,7 @@
    },
    {
     "users": 2,
-    "school": "Pace"
+    "school": "Login"
    },
    {
     "users": 2,
@@ -41,11 +41,15 @@
    },
    {
     "users": 2,
+    "school": "U"
+   },
+   {
+    "users": 2,
     "school": "SVA"
    },
    {
     "users": 2,
-    "school": "The New School"
+    "school": "Columbia"
    },
    {
     "users": 2,
@@ -53,11 +57,11 @@
    },
    {
     "users": 2,
-    "school": "U"
+    "school": "Pace"
    },
    {
     "users": 2,
-    "school": "Login"
+    "school": "The New School"
    },
    {
     "users": 1,
@@ -66,13 +70,9 @@
    {
     "users": 1,
     "school": "Temple"
-   },
-   {
-    "users": 1,
-    "school": "Berklee"
    }
   ],
-  "with_school": 238,
+  "with_school": 239,
   "schools_total": 50,
   "signups_by_month": [
    {
@@ -104,7 +104,7 @@
     "month": "2026-10"
    },
    {
-    "count": 560,
+    "count": 580,
     "month": "2026-11"
    }
   ]
@@ -114,21 +114,21 @@
   "instagram numbers are from the nightly Meta sync; follower_total is the latest synced day"
  ],
  "activity": {
-  "dau_7d_avg": 43,
-  "swipes_30d": 25432,
-  "messages_30d": 2877,
-  "applications_30d": 3835
+  "dau_7d_avg": 38,
+  "swipes_30d": 25309,
+  "messages_30d": 2937,
+  "applications_30d": 3851
  },
  "projects": {
-  "new_30d": 145,
+  "new_30d": 148,
   "top_tags": [
    {
     "tag": "film",
-    "count": 47
+    "count": 48
    },
    {
     "tag": "short film",
-    "count": 33
+    "count": 35
    },
    {
     "tag": "music",
@@ -140,14 +140,14 @@
    },
    {
     "tag": "writing",
-    "count": 22
-   },
-   {
-    "tag": "actors",
-    "count": 20
+    "count": 23
    },
    {
     "tag": "discussion",
+    "count": 20
+   },
+   {
+    "tag": "actors",
     "count": 20
    },
    {
@@ -156,30 +156,26 @@
    },
    {
     "tag": "storytelling",
-    "count": 16
+    "count": 17
    },
    {
     "tag": "actor",
     "count": 14
    },
    {
+    "tag": "recording",
+    "count": 12
+   },
+   {
     "tag": "band",
     "count": 12
    },
    {
-    "tag": "crew",
-    "count": 11
+    "tag": "writers",
+    "count": 12
    },
    {
     "tag": "performance",
-    "count": 11
-   },
-   {
-    "tag": "writers",
-    "count": 11
-   },
-   {
-    "tag": "acting",
     "count": 11
    },
    {
@@ -187,34 +183,38 @@
     "count": 11
    },
    {
+    "tag": "writer",
+    "count": 11
+   },
+   {
     "tag": "filmmaker",
     "count": 11
    },
    {
-    "tag": "recording",
+    "tag": "crew",
+    "count": 11
+   },
+   {
+    "tag": "acting",
     "count": 11
    },
    {
     "tag": "nyc",
     "count": 10
-   },
-   {
-    "tag": "writer",
-    "count": 10
    }
   ],
-  "public_active": 327,
-  "distinct_creators": 226
+  "public_active": 332,
+  "distinct_creators": 231
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1729741,
+   "reach_30d": 1809881,
    "views_30d": 0,
-   "followers_total": 13379,
-   "last_synced_day": "2026-11-13",
+   "followers_total": 13496,
+   "last_synced_day": "2026-11-14",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-13T07:24:16.464152+00:00"
+ "generated_at": "2026-11-14T07:24:16.227788+00:00"
 }
