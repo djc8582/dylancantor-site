@@ -1,18 +1,18 @@
 {
  "users": {
-  "total": 2128,
+  "total": 2149,
   "age_dist": {
-   "18_21": 599,
+   "18_21": 603,
    "22_25": 472,
-   "26_30": 368,
-   "31_plus": 557
+   "26_30": 372,
+   "31_plus": 565
   },
-  "onboarded": 1909,
-  "signups_7d": 208,
-  "signups_30d": 1040,
+  "onboarded": 1925,
+  "signups_7d": 166,
+  "signups_30d": 1034,
   "top_schools": [
    {
-    "users": 172,
+    "users": 173,
     "school": "NYU"
    },
    {
@@ -72,7 +72,7 @@
     "school": "Temple"
    }
   ],
-  "with_school": 241,
+  "with_school": 242,
   "schools_total": 51,
   "signups_by_month": [
    {
@@ -104,7 +104,7 @@
     "month": "2026-10"
    },
    {
-    "count": 593,
+    "count": 614,
     "month": "2026-11"
    }
   ]
@@ -114,17 +114,17 @@
   "instagram numbers are from the nightly Meta sync; follower_total is the latest synced day"
  ],
  "activity": {
-  "dau_7d_avg": 35,
-  "swipes_30d": 25608,
-  "messages_30d": 3001,
-  "applications_30d": 3854
+  "dau_7d_avg": 31,
+  "swipes_30d": 25563,
+  "messages_30d": 3053,
+  "applications_30d": 3855
  },
  "projects": {
-  "new_30d": 150,
+  "new_30d": 149,
   "top_tags": [
    {
     "tag": "film",
-    "count": 48
+    "count": 49
    },
    {
     "tag": "short film",
@@ -143,19 +143,19 @@
     "count": 23
    },
    {
-    "tag": "discussion",
-    "count": 20
-   },
-   {
     "tag": "actors",
     "count": 20
    },
    {
-    "tag": "comedy",
-    "count": 18
+    "tag": "discussion",
+    "count": 20
    },
    {
     "tag": "storytelling",
+    "count": 19
+   },
+   {
+    "tag": "comedy",
     "count": 18
    },
    {
@@ -163,7 +163,7 @@
     "count": 14
    },
    {
-    "tag": "recording",
+    "tag": "filmmaker",
     "count": 12
    },
    {
@@ -171,8 +171,16 @@
     "count": 12
    },
    {
+    "tag": "recording",
+    "count": 12
+   },
+   {
     "tag": "writers",
     "count": 12
+   },
+   {
+    "tag": "acting",
+    "count": 11
    },
    {
     "tag": "performance",
@@ -183,19 +191,11 @@
     "count": 11
    },
    {
-    "tag": "writer",
-    "count": 11
-   },
-   {
-    "tag": "filmmaker",
-    "count": 11
-   },
-   {
     "tag": "crew",
     "count": 11
    },
    {
-    "tag": "acting",
+    "tag": "writer",
     "count": 11
    },
    {
@@ -203,18 +203,18 @@
     "count": 10
    }
   ],
-  "public_active": 334,
-  "distinct_creators": 233
+  "public_active": 336,
+  "distinct_creators": 235
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1818703,
+   "reach_30d": 1729280,
    "views_30d": 0,
-   "followers_total": 13553,
-   "last_synced_day": "2026-11-15",
+   "followers_total": 13611,
+   "last_synced_day": "2026-11-16",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-15T07:23:39.507412+00:00"
+ "generated_at": "2026-11-16T07:24:01.804461+00:00"
 }
