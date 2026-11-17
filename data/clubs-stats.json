@@ -1,15 +1,15 @@
 {
  "users": {
-  "total": 2149,
+  "total": 2175,
   "age_dist": {
-   "18_21": 603,
-   "22_25": 472,
-   "26_30": 372,
-   "31_plus": 565
+   "18_21": 605,
+   "22_25": 479,
+   "26_30": 379,
+   "31_plus": 573
   },
-  "onboarded": 1925,
-  "signups_7d": 166,
-  "signups_30d": 1034,
+  "onboarded": 1948,
+  "signups_7d": 167,
+  "signups_30d": 1019,
   "top_schools": [
    {
     "users": 173,
@@ -72,8 +72,8 @@
     "school": "Temple"
    }
   ],
-  "with_school": 242,
-  "schools_total": 51,
+  "with_school": 243,
+  "schools_total": 52,
   "signups_by_month": [
    {
     "count": 71,
@@ -104,7 +104,7 @@
     "month": "2026-10"
    },
    {
-    "count": 614,
+    "count": 640,
     "month": "2026-11"
    }
   ]
@@ -114,13 +114,13 @@
   "instagram numbers are from the nightly Meta sync; follower_total is the latest synced day"
  ],
  "activity": {
-  "dau_7d_avg": 31,
-  "swipes_30d": 25563,
-  "messages_30d": 3053,
-  "applications_30d": 3855
+  "dau_7d_avg": 29,
+  "swipes_30d": 25252,
+  "messages_30d": 3085,
+  "applications_30d": 3805
  },
  "projects": {
-  "new_30d": 149,
+  "new_30d": 148,
   "top_tags": [
    {
     "tag": "film",
@@ -203,18 +203,18 @@
     "count": 10
    }
   ],
-  "public_active": 336,
-  "distinct_creators": 235
+  "public_active": 337,
+  "distinct_creators": 236
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1729280,
+   "reach_30d": 1593840,
    "views_30d": 0,
-   "followers_total": 13611,
-   "last_synced_day": "2026-11-16",
+   "followers_total": 13675,
+   "last_synced_day": "2026-11-17",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-16T07:24:01.804461+00:00"
+ "generated_at": "2026-11-17T07:24:08.785716+00:00"
 }
