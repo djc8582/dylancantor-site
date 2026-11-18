@@ -1,18 +1,18 @@
 {
  "users": {
-  "total": 2175,
+  "total": 2191,
   "age_dist": {
-   "18_21": 605,
-   "22_25": 479,
-   "26_30": 379,
-   "31_plus": 573
+   "18_21": 608,
+   "22_25": 483,
+   "26_30": 383,
+   "31_plus": 577
   },
-  "onboarded": 1948,
-  "signups_7d": 167,
-  "signups_30d": 1019,
+  "onboarded": 1962,
+  "signups_7d": 154,
+  "signups_30d": 992,
   "top_schools": [
    {
-    "users": 173,
+    "users": 175,
     "school": "NYU"
    },
    {
@@ -72,7 +72,7 @@
     "school": "Temple"
    }
   ],
-  "with_school": 243,
+  "with_school": 245,
   "schools_total": 52,
   "signups_by_month": [
    {
@@ -100,11 +100,11 @@
     "month": "2026-09"
    },
    {
-    "count": 674,
+    "count": 673,
     "month": "2026-10"
    },
    {
-    "count": 640,
+    "count": 657,
     "month": "2026-11"
    }
   ]
@@ -114,13 +114,13 @@
   "instagram numbers are from the nightly Meta sync; follower_total is the latest synced day"
  ],
  "activity": {
-  "dau_7d_avg": 29,
-  "swipes_30d": 25252,
-  "messages_30d": 3085,
-  "applications_30d": 3805
+  "dau_7d_avg": 26,
+  "swipes_30d": 24666,
+  "messages_30d": 3094,
+  "applications_30d": 3702
  },
  "projects": {
-  "new_30d": 148,
+  "new_30d": 152,
   "top_tags": [
    {
     "tag": "film",
@@ -128,7 +128,7 @@
    },
    {
     "tag": "short film",
-    "count": 35
+    "count": 34
    },
    {
     "tag": "music",
@@ -136,15 +136,15 @@
    },
    {
     "tag": "collaboration",
-    "count": 27
+    "count": 29
    },
    {
     "tag": "writing",
-    "count": 23
+    "count": 24
    },
    {
     "tag": "actors",
-    "count": 20
+    "count": 21
    },
    {
     "tag": "discussion",
@@ -163,7 +163,7 @@
     "count": 14
    },
    {
-    "tag": "filmmaker",
+    "tag": "writer",
     "count": 12
    },
    {
@@ -175,15 +175,19 @@
     "count": 12
    },
    {
+    "tag": "filmmaker",
+    "count": 12
+   },
+   {
     "tag": "writers",
     "count": 12
    },
    {
-    "tag": "acting",
+    "tag": "performance",
     "count": 11
    },
    {
-    "tag": "performance",
+    "tag": "acting",
     "count": 11
    },
    {
@@ -191,30 +195,26 @@
     "count": 11
    },
    {
-    "tag": "crew",
-    "count": 11
-   },
-   {
-    "tag": "writer",
-    "count": 11
-   },
-   {
     "tag": "nyc",
+    "count": 10
+   },
+   {
+    "tag": "crew",
     "count": 10
    }
   ],
-  "public_active": 337,
-  "distinct_creators": 236
+  "public_active": 342,
+  "distinct_creators": 240
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1593840,
+   "reach_30d": 1538303,
    "views_30d": 0,
-   "followers_total": 13675,
-   "last_synced_day": "2026-11-17",
+   "followers_total": 13729,
+   "last_synced_day": "2026-11-18",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-17T07:24:08.785716+00:00"
+ "generated_at": "2026-11-18T07:24:45.276141+00:00"
 }
