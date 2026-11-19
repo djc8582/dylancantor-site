@@ -1,15 +1,15 @@
 {
  "users": {
-  "total": 2191,
+  "total": 2205,
   "age_dist": {
-   "18_21": 608,
-   "22_25": 483,
+   "18_21": 609,
+   "22_25": 490,
    "26_30": 383,
-   "31_plus": 577
+   "31_plus": 582
   },
-  "onboarded": 1962,
-  "signups_7d": 154,
-  "signups_30d": 992,
+  "onboarded": 1975,
+  "signups_7d": 140,
+  "signups_30d": 973,
   "top_schools": [
    {
     "users": 175,
@@ -29,11 +29,7 @@
    },
    {
     "users": 2,
-    "school": "Login"
-   },
-   {
-    "users": 2,
-    "school": "Emerson"
+    "school": "Pace"
    },
    {
     "users": 2,
@@ -41,15 +37,15 @@
    },
    {
     "users": 2,
+    "school": "Emerson"
+   },
+   {
+    "users": 2,
     "school": "U"
    },
    {
     "users": 2,
-    "school": "SVA"
-   },
-   {
-    "users": 2,
-    "school": "Columbia"
+    "school": "Cpp"
    },
    {
     "users": 2,
@@ -57,23 +53,27 @@
    },
    {
     "users": 2,
-    "school": "Pace"
+    "school": "The New School"
    },
    {
     "users": 2,
-    "school": "The New School"
+    "school": "Login"
+   },
+   {
+    "users": 2,
+    "school": "Columbia"
+   },
+   {
+    "users": 2,
+    "school": "SVA"
    },
    {
     "users": 1,
     "school": "Brown"
-   },
-   {
-    "users": 1,
-    "school": "Temple"
    }
   ],
-  "with_school": 245,
-  "schools_total": 52,
+  "with_school": 247,
+  "schools_total": 53,
   "signups_by_month": [
    {
     "count": 71,
@@ -104,7 +104,7 @@
     "month": "2026-10"
    },
    {
-    "count": 657,
+    "count": 671,
     "month": "2026-11"
    }
   ]
@@ -114,17 +114,17 @@
   "instagram numbers are from the nightly Meta sync; follower_total is the latest synced day"
  ],
  "activity": {
-  "dau_7d_avg": 26,
-  "swipes_30d": 24666,
-  "messages_30d": 3094,
-  "applications_30d": 3702
+  "dau_7d_avg": 25,
+  "swipes_30d": 24356,
+  "messages_30d": 3121,
+  "applications_30d": 3668
  },
  "projects": {
-  "new_30d": 152,
+  "new_30d": 148,
   "top_tags": [
    {
     "tag": "film",
-    "count": 49
+    "count": 50
    },
    {
     "tag": "short film",
@@ -152,7 +152,7 @@
    },
    {
     "tag": "storytelling",
-    "count": 19
+    "count": 20
    },
    {
     "tag": "comedy",
@@ -203,18 +203,18 @@
     "count": 10
    }
   ],
-  "public_active": 342,
-  "distinct_creators": 240
+  "public_active": 345,
+  "distinct_creators": 243
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1538303,
+   "reach_30d": 1472995,
    "views_30d": 0,
-   "followers_total": 13729,
-   "last_synced_day": "2026-11-18",
+   "followers_total": 13765,
+   "last_synced_day": "2026-11-19",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-18T07:24:45.276141+00:00"
+ "generated_at": "2026-11-19T07:24:13.88043+00:00"
 }
