@@ -1,18 +1,18 @@
 {
  "users": {
-  "total": 2205,
+  "total": 2222,
   "age_dist": {
-   "18_21": 609,
-   "22_25": 490,
-   "26_30": 383,
-   "31_plus": 582
+   "18_21": 611,
+   "22_25": 492,
+   "26_30": 388,
+   "31_plus": 587
   },
-  "onboarded": 1975,
-  "signups_7d": 140,
-  "signups_30d": 973,
+  "onboarded": 1989,
+  "signups_7d": 129,
+  "signups_30d": 963,
   "top_schools": [
    {
-    "users": 175,
+    "users": 177,
     "school": "NYU"
    },
    {
@@ -72,7 +72,7 @@
     "school": "Brown"
    }
   ],
-  "with_school": 247,
+  "with_school": 249,
   "schools_total": 53,
   "signups_by_month": [
    {
@@ -100,11 +100,11 @@
     "month": "2026-09"
    },
    {
-    "count": 673,
+    "count": 672,
     "month": "2026-10"
    },
    {
-    "count": 671,
+    "count": 689,
     "month": "2026-11"
    }
   ]
@@ -115,20 +115,20 @@
  ],
  "activity": {
   "dau_7d_avg": 25,
-  "swipes_30d": 24356,
-  "messages_30d": 3121,
-  "applications_30d": 3668
+  "swipes_30d": 23999,
+  "messages_30d": 3125,
+  "applications_30d": 3618
  },
  "projects": {
-  "new_30d": 148,
+  "new_30d": 153,
   "top_tags": [
    {
     "tag": "film",
-    "count": 50
+    "count": 51
    },
    {
     "tag": "short film",
-    "count": 34
+    "count": 35
    },
    {
     "tag": "music",
@@ -144,7 +144,7 @@
    },
    {
     "tag": "actors",
-    "count": 21
+    "count": 22
    },
    {
     "tag": "discussion",
@@ -156,18 +156,18 @@
    },
    {
     "tag": "comedy",
-    "count": 18
+    "count": 19
    },
    {
     "tag": "actor",
     "count": 14
    },
    {
-    "tag": "writer",
-    "count": 12
+    "tag": "writers",
+    "count": 13
    },
    {
-    "tag": "band",
+    "tag": "acting",
     "count": 12
    },
    {
@@ -179,19 +179,19 @@
     "count": 12
    },
    {
-    "tag": "writers",
+    "tag": "band",
     "count": 12
    },
    {
-    "tag": "performance",
-    "count": 11
-   },
-   {
-    "tag": "acting",
-    "count": 11
+    "tag": "writer",
+    "count": 12
    },
    {
     "tag": "documentary",
+    "count": 11
+   },
+   {
+    "tag": "performance",
     "count": 11
    },
    {
@@ -203,18 +203,18 @@
     "count": 10
    }
   ],
-  "public_active": 345,
-  "distinct_creators": 243
+  "public_active": 350,
+  "distinct_creators": 248
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1472995,
+   "reach_30d": 1401055,
    "views_30d": 0,
-   "followers_total": 13765,
-   "last_synced_day": "2026-11-19",
+   "followers_total": 13803,
+   "last_synced_day": "2026-11-20",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-19T07:24:13.88043+00:00"
+ "generated_at": "2026-11-20T07:23:59.483796+00:00"
 }
