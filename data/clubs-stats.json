@@ -1,15 +1,15 @@
 {
  "users": {
-  "total": 2222,
+  "total": 2239,
   "age_dist": {
-   "18_21": 611,
-   "22_25": 492,
-   "26_30": 388,
-   "31_plus": 587
+   "18_21": 612,
+   "22_25": 495,
+   "26_30": 391,
+   "31_plus": 593
   },
-  "onboarded": 1989,
-  "signups_7d": 129,
-  "signups_30d": 963,
+  "onboarded": 2002,
+  "signups_7d": 126,
+  "signups_30d": 952,
   "top_schools": [
    {
     "users": 177,
@@ -28,12 +28,16 @@
     "school": "Pratt"
    },
    {
-    "users": 2,
-    "school": "Pace"
+    "users": 3,
+    "school": "The New School"
    },
    {
     "users": 2,
     "school": "Students"
+   },
+   {
+    "users": 2,
+    "school": "Pace"
    },
    {
     "users": 2,
@@ -53,10 +57,6 @@
    },
    {
     "users": 2,
-    "school": "The New School"
-   },
-   {
-    "users": 2,
     "school": "Login"
    },
    {
@@ -72,7 +72,7 @@
     "school": "Brown"
    }
   ],
-  "with_school": 249,
+  "with_school": 250,
   "schools_total": 53,
   "signups_by_month": [
    {
@@ -104,7 +104,7 @@
     "month": "2026-10"
    },
    {
-    "count": 689,
+    "count": 706,
     "month": "2026-11"
    }
   ]
@@ -115,12 +115,12 @@
  ],
  "activity": {
   "dau_7d_avg": 25,
-  "swipes_30d": 23999,
-  "messages_30d": 3125,
-  "applications_30d": 3618
+  "swipes_30d": 24225,
+  "messages_30d": 3119,
+  "applications_30d": 3530
  },
  "projects": {
-  "new_30d": 153,
+  "new_30d": 154,
   "top_tags": [
    {
     "tag": "film",
@@ -144,14 +144,14 @@
    },
    {
     "tag": "actors",
-    "count": 22
-   },
-   {
-    "tag": "discussion",
-    "count": 20
+    "count": 23
    },
    {
     "tag": "storytelling",
+    "count": 20
+   },
+   {
+    "tag": "discussion",
     "count": 20
    },
    {
@@ -160,10 +160,6 @@
    },
    {
     "tag": "actor",
-    "count": 14
-   },
-   {
-    "tag": "writers",
     "count": 13
    },
    {
@@ -175,11 +171,11 @@
     "count": 12
    },
    {
-    "tag": "filmmaker",
+    "tag": "band",
     "count": 12
    },
    {
-    "tag": "band",
+    "tag": "writers",
     "count": 12
    },
    {
@@ -187,7 +183,15 @@
     "count": 12
    },
    {
+    "tag": "filmmaker",
+    "count": 12
+   },
+   {
     "tag": "documentary",
+    "count": 12
+   },
+   {
+    "tag": "crew",
     "count": 11
    },
    {
@@ -197,24 +201,20 @@
    {
     "tag": "nyc",
     "count": 10
-   },
-   {
-    "tag": "crew",
-    "count": 10
    }
   ],
-  "public_active": 350,
-  "distinct_creators": 248
+  "public_active": 351,
+  "distinct_creators": 249
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1401055,
+   "reach_30d": 1339155,
    "views_30d": 0,
-   "followers_total": 13803,
-   "last_synced_day": "2026-11-20",
+   "followers_total": 13828,
+   "last_synced_day": "2026-11-21",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-20T07:23:59.483796+00:00"
+ "generated_at": "2026-11-21T07:23:51.040562+00:00"
 }
