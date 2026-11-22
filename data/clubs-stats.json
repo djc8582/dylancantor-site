@@ -1,22 +1,22 @@
 {
  "users": {
-  "total": 2239,
+  "total": 2260,
   "age_dist": {
-   "18_21": 612,
-   "22_25": 495,
-   "26_30": 391,
-   "31_plus": 593
+   "18_21": 620,
+   "22_25": 496,
+   "26_30": 395,
+   "31_plus": 598
   },
-  "onboarded": 2002,
-  "signups_7d": 126,
-  "signups_30d": 952,
+  "onboarded": 2020,
+  "signups_7d": 134,
+  "signups_30d": 953,
   "top_schools": [
    {
     "users": 177,
     "school": "NYU"
    },
    {
-    "users": 7,
+    "users": 8,
     "school": "Student"
    },
    {
@@ -72,7 +72,7 @@
     "school": "Brown"
    }
   ],
-  "with_school": 250,
+  "with_school": 251,
   "schools_total": 53,
   "signups_by_month": [
    {
@@ -104,7 +104,7 @@
     "month": "2026-10"
    },
    {
-    "count": 706,
+    "count": 727,
     "month": "2026-11"
    }
   ]
@@ -114,13 +114,13 @@
   "instagram numbers are from the nightly Meta sync; follower_total is the latest synced day"
  ],
  "activity": {
-  "dau_7d_avg": 25,
-  "swipes_30d": 24225,
-  "messages_30d": 3119,
-  "applications_30d": 3530
+  "dau_7d_avg": 26,
+  "swipes_30d": 23908,
+  "messages_30d": 3137,
+  "applications_30d": 3516
  },
  "projects": {
-  "new_30d": 154,
+  "new_30d": 156,
   "top_tags": [
    {
     "tag": "film",
@@ -164,6 +164,14 @@
    },
    {
     "tag": "acting",
+    "count": 13
+   },
+   {
+    "tag": "writers",
+    "count": 13
+   },
+   {
+    "tag": "band",
     "count": 12
    },
    {
@@ -171,11 +179,7 @@
     "count": 12
    },
    {
-    "tag": "band",
-    "count": 12
-   },
-   {
-    "tag": "writers",
+    "tag": "documentary",
     "count": 12
    },
    {
@@ -187,34 +191,30 @@
     "count": 12
    },
    {
-    "tag": "documentary",
-    "count": 12
-   },
-   {
-    "tag": "crew",
-    "count": 11
-   },
-   {
     "tag": "performance",
     "count": 11
    },
    {
-    "tag": "nyc",
-    "count": 10
+    "tag": "filming",
+    "count": 11
+   },
+   {
+    "tag": "crew",
+    "count": 11
    }
   ],
-  "public_active": 351,
-  "distinct_creators": 249
+  "public_active": 354,
+  "distinct_creators": 251
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1339155,
+   "reach_30d": 1221693,
    "views_30d": 0,
-   "followers_total": 13828,
-   "last_synced_day": "2026-11-21",
+   "followers_total": 13863,
+   "last_synced_day": "2026-11-22",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-21T07:23:51.040562+00:00"
+ "generated_at": "2026-11-22T07:23:59.630998+00:00"
 }
