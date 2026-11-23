@@ -1,15 +1,15 @@
 {
  "users": {
-  "total": 2260,
+  "total": 2280,
   "age_dist": {
-   "18_21": 620,
-   "22_25": 496,
+   "18_21": 626,
+   "22_25": 502,
    "26_30": 395,
-   "31_plus": 598
+   "31_plus": 603
   },
-  "onboarded": 2020,
-  "signups_7d": 134,
-  "signups_30d": 953,
+  "onboarded": 2037,
+  "signups_7d": 133,
+  "signups_30d": 949,
   "top_schools": [
    {
     "users": 177,
@@ -37,7 +37,7 @@
    },
    {
     "users": 2,
-    "school": "Pace"
+    "school": "Login"
    },
    {
     "users": 2,
@@ -45,11 +45,11 @@
    },
    {
     "users": 2,
-    "school": "U"
+    "school": "Columbia"
    },
    {
     "users": 2,
-    "school": "Cpp"
+    "school": "U"
    },
    {
     "users": 2,
@@ -57,11 +57,11 @@
    },
    {
     "users": 2,
-    "school": "Login"
+    "school": "Cpp"
    },
    {
     "users": 2,
-    "school": "Columbia"
+    "school": "Pace"
    },
    {
     "users": 2,
@@ -69,11 +69,11 @@
    },
    {
     "users": 1,
-    "school": "Brown"
+    "school": "Temple"
    }
   ],
-  "with_school": 251,
-  "schools_total": 53,
+  "with_school": 252,
+  "schools_total": 54,
   "signups_by_month": [
    {
     "count": 71,
@@ -104,7 +104,7 @@
     "month": "2026-10"
    },
    {
-    "count": 727,
+    "count": 747,
     "month": "2026-11"
    }
   ]
@@ -115,20 +115,20 @@
  ],
  "activity": {
   "dau_7d_avg": 26,
-  "swipes_30d": 23908,
-  "messages_30d": 3137,
-  "applications_30d": 3516
+  "swipes_30d": 24254,
+  "messages_30d": 3213,
+  "applications_30d": 3560
  },
  "projects": {
-  "new_30d": 156,
+  "new_30d": 158,
   "top_tags": [
    {
     "tag": "film",
-    "count": 51
+    "count": 53
    },
    {
     "tag": "short film",
-    "count": 35
+    "count": 34
    },
    {
     "tag": "music",
@@ -148,22 +148,30 @@
    },
    {
     "tag": "storytelling",
-    "count": 20
+    "count": 21
+   },
+   {
+    "tag": "comedy",
+    "count": 21
    },
    {
     "tag": "discussion",
     "count": 20
    },
    {
-    "tag": "comedy",
-    "count": 19
-   },
-   {
     "tag": "actor",
-    "count": 13
+    "count": 14
    },
    {
     "tag": "acting",
+    "count": 13
+   },
+   {
+    "tag": "documentary",
+    "count": 13
+   },
+   {
+    "tag": "filmmaker",
     "count": 13
    },
    {
@@ -179,19 +187,11 @@
     "count": 12
    },
    {
-    "tag": "documentary",
-    "count": 12
-   },
-   {
     "tag": "writer",
     "count": 12
    },
    {
-    "tag": "filmmaker",
-    "count": 12
-   },
-   {
-    "tag": "performance",
+    "tag": "crew",
     "count": 11
    },
    {
@@ -199,22 +199,22 @@
     "count": 11
    },
    {
-    "tag": "crew",
+    "tag": "performance",
     "count": 11
    }
   ],
-  "public_active": 354,
-  "distinct_creators": 251
+  "public_active": 358,
+  "distinct_creators": 255
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1221693,
+   "reach_30d": 1159314,
    "views_30d": 0,
-   "followers_total": 13863,
-   "last_synced_day": "2026-11-22",
+   "followers_total": 13899,
+   "last_synced_day": "2026-11-23",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-22T07:23:59.630998+00:00"
+ "generated_at": "2026-11-23T07:24:04.796469+00:00"
 }
