@@ -1,15 +1,15 @@
 {
  "users": {
-  "total": 2301,
+  "total": 2323,
   "age_dist": {
-   "18_21": 629,
-   "22_25": 507,
-   "26_30": 402,
-   "31_plus": 608
+   "18_21": 633,
+   "22_25": 510,
+   "26_30": 405,
+   "31_plus": 614
   },
-  "onboarded": 2057,
-  "signups_7d": 128,
-  "signups_30d": 954,
+  "onboarded": 2073,
+  "signups_7d": 133,
+  "signups_30d": 952,
   "top_schools": [
    {
     "users": 177,
@@ -104,7 +104,7 @@
     "month": "2026-10"
    },
    {
-    "count": 768,
+    "count": 790,
     "month": "2026-11"
    }
   ]
@@ -115,9 +115,9 @@
  ],
  "activity": {
   "dau_7d_avg": 27,
-  "swipes_30d": 24137,
-  "messages_30d": 3315,
-  "applications_30d": 3525
+  "swipes_30d": 23647,
+  "messages_30d": 3301,
+  "applications_30d": 3501
  },
  "projects": {
   "new_30d": 159,
@@ -209,12 +209,12 @@
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1127991,
+   "reach_30d": 1162546,
    "views_30d": 0,
-   "followers_total": 13932,
-   "last_synced_day": "2026-11-24",
+   "followers_total": 13984,
+   "last_synced_day": "2026-11-25",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-24T07:24:02.493128+00:00"
+ "generated_at": "2026-11-25T07:23:40.250878+00:00"
 }
