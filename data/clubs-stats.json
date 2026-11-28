@@ -1,18 +1,18 @@
 {
  "users": {
-  "total": 2337,
+  "total": 2363,
   "age_dist": {
-   "18_21": 635,
-   "22_25": 514,
-   "26_30": 409,
-   "31_plus": 614
+   "18_21": 640,
+   "22_25": 518,
+   "26_30": 414,
+   "31_plus": 619
   },
-  "onboarded": 2083,
-  "signups_7d": 133,
-  "signups_30d": 927,
+  "onboarded": 2101,
+  "signups_7d": 124,
+  "signups_30d": 890,
   "top_schools": [
    {
-    "users": 177,
+    "users": 179,
     "school": "NYU"
    },
    {
@@ -72,7 +72,7 @@
     "school": "Temple"
    }
   ],
-  "with_school": 253,
+  "with_school": 255,
   "schools_total": 55,
   "signups_by_month": [
    {
@@ -104,7 +104,7 @@
     "month": "2026-10"
    },
    {
-    "count": 804,
+    "count": 830,
     "month": "2026-11"
    }
   ]
@@ -114,17 +114,17 @@
   "instagram numbers are from the nightly Meta sync; follower_total is the latest synced day"
  ],
  "activity": {
-  "dau_7d_avg": 26,
-  "swipes_30d": 23136,
-  "messages_30d": 3329,
-  "applications_30d": 3454
+  "dau_7d_avg": 23,
+  "swipes_30d": 21783,
+  "messages_30d": 3312,
+  "applications_30d": 3332
  },
  "projects": {
-  "new_30d": 159,
+  "new_30d": 150,
   "top_tags": [
    {
     "tag": "film",
-    "count": 54
+    "count": 57
    },
    {
     "tag": "short film",
@@ -132,18 +132,18 @@
    },
    {
     "tag": "music",
-    "count": 33
+    "count": 34
    },
    {
     "tag": "collaboration",
     "count": 30
    },
    {
-    "tag": "writing",
-    "count": 25
+    "tag": "actors",
+    "count": 26
    },
    {
-    "tag": "actors",
+    "tag": "writing",
     "count": 25
    },
    {
@@ -160,11 +160,15 @@
    },
    {
     "tag": "actor",
-    "count": 15
+    "count": 17
    },
    {
     "tag": "writers",
     "count": 15
+   },
+   {
+    "tag": "acting",
+    "count": 14
    },
    {
     "tag": "filmmaker",
@@ -175,15 +179,7 @@
     "count": 13
    },
    {
-    "tag": "acting",
-    "count": 13
-   },
-   {
     "tag": "band",
-    "count": 12
-   },
-   {
-    "tag": "writer",
     "count": 12
    },
    {
@@ -191,11 +187,15 @@
     "count": 12
    },
    {
-    "tag": "filmmaking",
+    "tag": "filming",
     "count": 12
    },
    {
-    "tag": "filming",
+    "tag": "writer",
+    "count": 12
+   },
+   {
+    "tag": "filmmaking",
     "count": 12
    },
    {
@@ -203,18 +203,18 @@
     "count": 11
    }
   ],
-  "public_active": 364,
-  "distinct_creators": 261
+  "public_active": 369,
+  "distinct_creators": 264
  },
  "instagram": [
   {
    "username": "clubs.create",
-   "reach_30d": 1141050,
+   "reach_30d": 950514,
    "views_30d": 0,
-   "followers_total": 14028,
-   "last_synced_day": "2026-11-26",
+   "followers_total": 14061,
+   "last_synced_day": "2026-11-28",
    "profile_views_30d": 0
   }
  ],
- "generated_at": "2026-11-26T07:23:48.803107+00:00"
+ "generated_at": "2026-11-28T07:23:51.994595+00:00"
 }
